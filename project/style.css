@@ -1,0 +1,95 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+@keyframes animateButton {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-25rem);
+    }
+}
+
+/* CONTENT */
+
+#content01 {
+    width: 100%;
+    height: 100%;
+
+
+    overflow: hidden;
+    background-image: url(img/header.webp);
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+#playButton {
+    width: 30rem;
+    height: 10rem;
+    cursor: pointer;
+    user-select: none;
+
+    position: fixed;
+    left: -5%;
+    top: 30%;
+}
+
+#tutorialButton {
+    width: 20rem;
+    height: 8rem;
+    cursor: pointer;
+    user-select: none;
+
+    position: fixed;
+    left: -3%;
+    top: 50%;
+}
+
+#headerBg {
+    width: 100%;
+}
+
+/* -------------------------------------- */
+
+#content02 {
+    justify-content: space-around;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+
+    background: #262632;
+
+}
+
+#levelContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 90vw;
+}
+
+
+#levelContainer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    width: 55rem;
+    height: 35rem;
+
+    background-color: white;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+
+    background-image: url(img/detektiv.webp);
+    background-repeat: no-repeat;
+    background-position: top;
+
+}
