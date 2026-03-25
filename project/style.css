@@ -74,7 +74,7 @@ body {
 }
 
 #infoText {
-    font-size: 5rem;
+    font-size: 4rem;
     padding: 0;
     color: #FDB31D;
     font-family: font;
@@ -98,11 +98,43 @@ body {
     color: white;
     width: 65rem;
     height: 35rem;
+    cursor: pointer;
+    user-select: none;
 
     background-color: white;
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 
-    background-image: url(img/detektiv.webp);
+    background-image: url(img/headerWithout.webp);
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: center;
 }
+
+
+/* -------------------------------------- */
+
+
+#content03 {
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden    ;
+
+    background: #262632;
+
+    margin: 0;
+    padding: 0;
+}
+
+#tutorialContainer {
+    width: 100vw;
+    height: 45rem;
+
+    background-image: url(img/museumDrinnen.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
