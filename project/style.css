@@ -1,3 +1,8 @@
+@font-face {
+    font-family: font;
+    src: url(font/Zen_Dots/ZenDots-Regular.ttf);
+}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -59,6 +64,7 @@ body {
 #content02 {
     justify-content: space-around;
     align-items: center;
+    flex-direction: column;
 
     height: 100%;
     width: 100%;
@@ -67,10 +73,18 @@ body {
 
 }
 
+#infoText {
+    font-size: 5rem;
+    padding: 0;
+    color: #FDB31D;
+    font-family: font;
+}
+
 #levelContainer {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-family: font;
 
     width: 90vw;
 }
@@ -82,7 +96,7 @@ body {
     align-items: center;
 
     color: white;
-    width: 55rem;
+    width: 65rem;
     height: 35rem;
 
     background-color: white;
@@ -91,5 +105,4 @@ body {
     background-image: url(img/detektiv.webp);
     background-repeat: no-repeat;
     background-position: top;
-
 }
