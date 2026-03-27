@@ -138,3 +138,58 @@ body {
     background-size: cover;
 }
 
+#detekivErklaert {
+    position: fixed;
+    right: 25rem;
+    top: 50%;
+
+    width: 20rem;
+}
+
+#bubbleErklaert {
+    position: fixed;
+    right: 35rem;
+    top: 15%;
+    transform: rotateY(180deg) rotate(25deg);
+
+    width: 45rem;
+}
+
+#textContainerErklaert {
+    position: fixed;
+    right: 46rem;
+    top: 30%;
+
+    width: 25rem;
+    height: 12rem;
+    padding: 2%;
+
+    border: 2px solid yellow;
+    overflow: hidden;
+}
+
+/* Slides */
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+/* Buttons */
+#prevBtn, #nextBtn {
+    position: absolute;
+    bottom: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+

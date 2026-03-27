@@ -43,3 +43,23 @@ function tutorialButton() {
     CONTENT_DISPLAY.content02.style.display = "none";
     CONTENT_DISPLAY.content03.style.display = "flex";
 }
+
+
+let slides = document.getElementsByClassName("slide")
+let i = 0
+
+function zeigen() {
+
+    for (let j = 0; j < slides.length; j++) {
+        slides[j].style.display = "none"
+    }
+
+    slides[i].style.display = "block"
+
+    i++
+    if (i >= slides.length) {
+        i = 0
+    }
+}
+
+setInterval(zeigen, 3000);
