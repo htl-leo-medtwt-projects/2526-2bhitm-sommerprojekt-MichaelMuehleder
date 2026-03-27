@@ -46,7 +46,7 @@ function tutorialButton() {
 
 
 let slides = document.getElementsByClassName("slide")
-let i = 0
+let i = 1;
 
 function zeigen() {
 
@@ -59,7 +59,8 @@ function zeigen() {
     i++
     if (i >= slides.length) {
         i = 0
+        CONTENT_DISPLAY.content01.style.display = "flex";
+        CONTENT_DISPLAY.content02.style.display = "none";
+        CONTENT_DISPLAY.content03.style.display = "none";
     }
 }
-
-setInterval(zeigen, 3000);

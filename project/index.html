@@ -18,7 +18,7 @@
 
     <div id="content02">
         <div id="levelContainer">
-            <div>01</div>
+            <div onclick="level01(this)">01</div>
             <div>02</div>
             <div>03</div>
         </div>
@@ -42,17 +42,52 @@
 
             <div id="textContainerErklaert">
                 <div class="slide active">
-                    <p>Text 1: Lorem ipsum dolor sit amet...</p>
+                    <h1>Spielidee und Ziel</h1>
+                    <p>
+                        Im Stadtmuseum wurde ein wertvolles Gemälde gestohlen. Drei Verdächtige befinden sich noch
+                        im Gebäude.
+                        Du übernimmst die Rolle eines Detektivs und musst durch Befragungen, Hinweise und logisches
+                        Denken den Täter finden.
+                        Ziel ist es, die richtige Person zu beschuldigen.
+                    </p>
                 </div>
                 <div class="slide">
-                    <p>Text 2: Anderer Inhalt hier...</p>
+                    <h1>Spielmechaniken</h1>
+                    <p>
+                        Du kannst Verdächtige anklicken, Dialoge auswählen und Hinweise sammeln.
+                        Ein Inventarsystem hilft dir dabei, Beweise zu speichern.
+                        Zusätzlich kannst du Aussagen vergleichen, um Widersprüche zu erkennen.
+                    </p>
                 </div>
                 <div class="slide">
-                    <p>Text 3: Noch mehr Text...</p>
+                    <h1>User-Aktionen und Steuerung</h1>
+                    <p>
+                        Der Spieler nutzt hauptsächlich die Maus: Verdächtige anklicken, Dialogoptionen wählen und
+                        Hinweise untersuchen.
+                        Das Inventar kann auch per Taste "E" geöffnet werden.
+                        Am Ende kannst du über einen Button den Täter beschuldigen.
+                    </p>
+                </div>
+                <div class="slide">
+                    <h1>Herausforderungen</h1>
+                    <p>
+                        Du musst Zeitangaben vergleichen, Widersprüche erkennen und zwischen wichtigen und unwichtigen
+                        Hinweisen unterscheiden.
+                        Außerdem musst du strategisch entscheiden, welche Fragen du stellst.
+                        Manche Hinweise werden erst durch bestimmte Dialoge freigeschaltet.
+                    </p>
+                </div>
+                <div class="slide">
+                    <h1>Levelsystem und Gewinn/Verlust</h1>
+                    <p>
+                        Es gibt drei Schwierigkeitsstufen: Leicht (viele Hinweise), Mittel (weniger klare Fehler) und
+                        Schwer (Zeitlimit und begrenzte Fragen).
+                        Gewinnen kannst du, wenn du den richtigen Täter beschuldigst.
+                        Verlieren kannst du durch falsche Anschuldigungen, zu viele Fragen oder Zeitablauf.
+                    </p>
                 </div>
 
-                <button id="prevBtn">←</button>
-                <button id="nextBtn">→</button>
+                <button id="nextBtn" onclick="zeigen()">→</button>
             </div>
         </div>
     </div>
