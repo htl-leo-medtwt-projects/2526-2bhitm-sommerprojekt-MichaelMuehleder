@@ -187,3 +187,89 @@ body {
     right: 50%;
 }
 
+
+/* -------------------------------------- */
+
+
+#content04 {
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden    ;
+
+    background: #262632;
+
+    margin: 0;
+    padding: 0;
+}
+
+#storySliderContainer {
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    position: relative;
+}
+
+.storyTrack {
+    display: flex;
+    transition: transform 0.4s;
+}
+
+.storyTrack div {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+
+}
+
+.storyTrack img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+#StoryInfoText {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    font-size: 4rem;
+    padding: 0;
+    color: #FDB31D;
+    font-family: font;
+    width: 95%;
+}
+
+.storyText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    bottom: 25rem;
+    left: 1rem;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.59);
+    border-radius: 2rem;
+    width: 90%;
+    height: 7rem;
+    padding: 2%;
+    
+    font-family: font;
+    font-size: 1rem;
+    color: white;
+
+    user-select: none;
+}
+
+#storyNext{
+    width: 25rem;
+    cursor: pointer;
+    user-select: none;
+}
+

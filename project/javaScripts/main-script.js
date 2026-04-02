@@ -64,3 +64,26 @@ function zeigen() {
         CONTENT_DISPLAY.content03.style.display = "none";
     }
 }
+
+
+function level01() {
+
+    CONTENT_DISPLAY.content01.style.display = "none";
+    CONTENT_DISPLAY.content02.style.display = "none";
+    CONTENT_DISPLAY.content03.style.display = "none";
+    CONTENT_DISPLAY.content04.style.display = "flex";
+}
+
+let index = 0;
+function nextSlide() {
+    var track = document.querySelector(".storyTrack");
+    var images = document.querySelectorAll(".storyTrack img");
+
+    index = index + 1;
+
+    if (index >= images.length) {
+        index = 0;
+    }
+
+    track.style.transform = "translateX(-" + (index * 100) + "%)";
+}
