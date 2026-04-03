@@ -82,8 +82,30 @@ function nextSlide() {
     index = index + 1;
 
     if (index >= images.length) {
-        index = 0;
+        CONTENT_DISPLAY.content01.style.display = "none";
+        CONTENT_DISPLAY.content02.style.display = "none";
+        CONTENT_DISPLAY.content03.style.display = "none";
+        CONTENT_DISPLAY.content04.style.display = "none";
+        CONTENT_DISPLAY.content05.style.display = "flex";
+
     }
 
     track.style.transform = "translateX(-" + (index * 100) + "%)";
+}
+
+function notizbuch() {
+    CONTENT_DISPLAY.content01.style.display = "none";
+    CONTENT_DISPLAY.content02.style.display = "none";
+    CONTENT_DISPLAY.content03.style.display = "none";
+    CONTENT_DISPLAY.content04.style.display = "none";
+    CONTENT_DISPLAY.content05.style.display = "none";
+    CONTENT_DISPLAY.content06.style.display = "flex";
+
+}
+
+function ausweis() {
+
+    CONTENT_DISPLAY.content06.style.display = "none";
+    CONTENT_DISPLAY.content07.style.display = "flex";
+
 }
