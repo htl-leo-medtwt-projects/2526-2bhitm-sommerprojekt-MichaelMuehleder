@@ -5,7 +5,11 @@ let CONTENT_DISPLAY = {
     content04: document.getElementById('content04'),
     content05: document.getElementById('content05'),
     content06: document.getElementById('content06'),
-    content07: document.getElementById('content07')
+    content07: document.getElementById('content07'),
+    content08: document.getElementById('content08'),
+    content09: document.getElementById('content09'),
+    content10: document.getElementById('content10'),
+    content11: document.getElementById('content11')
 }
 
 CONTENT_DISPLAY.content01.style.display = "flex";
@@ -15,6 +19,10 @@ CONTENT_DISPLAY.content04.style.display = "none";
 CONTENT_DISPLAY.content05.style.display = "none";
 CONTENT_DISPLAY.content06.style.display = "none";
 CONTENT_DISPLAY.content07.style.display = "none";
+CONTENT_DISPLAY.content08.style.display = "none";
+CONTENT_DISPLAY.content09.style.display = "none";
+CONTENT_DISPLAY.content10.style.display = "none";
+CONTENT_DISPLAY.content11.style.display = "none";
 
 
 function animatePlayButton() {
@@ -103,9 +111,22 @@ function notizbuch() {
 
 }
 
+function back() {
+    CONTENT_DISPLAY.content04.style.display = "none";
+    CONTENT_DISPLAY.content05.style.display = "flex";
+    CONTENT_DISPLAY.content06.style.display = "none";
+}
+
+function inventar() {
+    CONTENT_DISPLAY.content05.style.display = "none";
+    CONTENT_DISPLAY.content06.style.display = "none";
+    CONTENT_DISPLAY.content07.style.display = "flex";
+
+}
+
 function ausweis() {
 
     CONTENT_DISPLAY.content06.style.display = "none";
-    CONTENT_DISPLAY.content07.style.display = "flex";
+    CONTENT_DISPLAY.content08.style.display = "flex";
 
 }
