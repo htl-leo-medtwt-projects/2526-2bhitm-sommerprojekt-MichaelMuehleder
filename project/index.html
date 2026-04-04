@@ -146,8 +146,8 @@
         </div>
 
         <div id="buttonContainerBuch">
-            <img src="img/verdaechtigeButton.webp" alt="">
-            <img src="img/befragungenButton.webp" alt="">
+            <img src="img/verdaechtigeButton.webp" alt="" id="verdaechtigeWahlButton" onclick="verdaechtigeWahl()">
+            <img src="img/befragungenButton.webp" alt="" id="befragungenButton" onclick="befragungen()">
         </div>
 
         <div id="back">
@@ -167,21 +167,58 @@
     </div>
 
     <div id="content08">
-        8
+        <h1 id="wahlH1">Verdächtige Wahl</h1>
+
+        <img src="img/besucher_choose.png" alt="" id="besucher_choose"> <!--
+        <img src="img/wachmann_choose.png" alt="">
+        <img src="img/techniker_choose.png" alt="">
+        <img src="img/arbeiterin_choose.png" alt="">
+        <img src="img/museumFrau_choose.png" alt="">  -->
     </div>
 
     <div id="content09">
-        9
+
+        <div id="infoText">
+            <p>Wähle jemanden zum befragen:</p>
+        </div>
+
+        <div id="verdachtWahl">
+            <img src="img/besucher.png" alt="" onclick="besucher()">
+            <img src="img/museumFrau 1.png" alt="" onclick="museumFrau()">
+            <img src="img/techniker 1.png" alt="" onclick="techniker()">
+            <img src="img/wachmann.png" alt="" onclick="wachmann()">
+            <img src="img/arbeiterin 1.png" alt="" onclick="arbeiterin()">
+        </div>
+
     </div>
 
     <div id="content10">
-        10
+        <img src="img/akte.png" alt="" class="akte">
+        <div class="backToChoose" onclick="backToChoose()">←</div>
+    </div>
+    <div id="content11">
+        <img src="img/akte.png" alt="" class="akte">
+        <div class="backToChoose" onclick="backToChoose()">←</div>
+
+    </div>
+    <div id="content12">
+        <img src="img/akte.png" alt="" class="akte">
+        <div class="backToChoose" onclick="backToChoose()">←</div>
+
+    </div>
+    <div id="content13">
+        <img src="img/akte.png" alt="" class="akte">
+        <div class="backToChoose" onclick="backToChoose()">←</div>
+
+    </div>
+    <div id="content14">
+        <img src="img/akte.png" alt="" class="akte">
+        <div class="backToChoose" onclick="backToChoose()">←</div>
     </div>
 
-    <div id="content11">
-        11
-    </div>
-    
+      <div id="content15"></div>
+
+
 </body>
 
 </html>

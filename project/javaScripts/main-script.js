@@ -9,7 +9,12 @@ let CONTENT_DISPLAY = {
     content08: document.getElementById('content08'),
     content09: document.getElementById('content09'),
     content10: document.getElementById('content10'),
-    content11: document.getElementById('content11')
+    content11: document.getElementById('content11'),
+    content12: document.getElementById('content12'),
+    content13: document.getElementById('content13'),
+    content14: document.getElementById('content14'),
+    content15: document.getElementById('content15')
+
 }
 
 CONTENT_DISPLAY.content01.style.display = "flex";
@@ -23,6 +28,11 @@ CONTENT_DISPLAY.content08.style.display = "none";
 CONTENT_DISPLAY.content09.style.display = "none";
 CONTENT_DISPLAY.content10.style.display = "none";
 CONTENT_DISPLAY.content11.style.display = "none";
+CONTENT_DISPLAY.content12.style.display = "none";
+CONTENT_DISPLAY.content13.style.display = "none";
+CONTENT_DISPLAY.content14.style.display = "none";
+CONTENT_DISPLAY.content15.style.display = "none";
+
 
 
 function animatePlayButton() {
@@ -128,5 +138,54 @@ function ausweis() {
 
     CONTENT_DISPLAY.content06.style.display = "none";
     CONTENT_DISPLAY.content08.style.display = "flex";
+}
 
+function befragungen() {
+    CONTENT_DISPLAY.content05.style.display = "none";
+    CONTENT_DISPLAY.content06.style.display = "none";
+    CONTENT_DISPLAY.content09.style.display = "flex";
+}
+
+
+// DIALOGE
+
+function besucher() {
+    CONTENT_DISPLAY.content09.style.display = "none";
+    CONTENT_DISPLAY.content10.style.display = "flex";
+}
+
+function museumFrau() {
+    CONTENT_DISPLAY.content09.style.display = "none";
+    CONTENT_DISPLAY.content11.style.display = "flex";
+}
+
+function techniker() {
+    CONTENT_DISPLAY.content09.style.display = "none";
+    CONTENT_DISPLAY.content12.style.display = "flex";
+}
+
+function wachmann() {
+    CONTENT_DISPLAY.content09.style.display = "none";
+    CONTENT_DISPLAY.content13.style.display = "flex";
+}
+
+function arbeiterin() {
+    CONTENT_DISPLAY.content09.style.display = "none";
+    CONTENT_DISPLAY.content14.style.display = "flex";
+}
+
+function backToChoose() {
+    CONTENT_DISPLAY.content09.style.display = "flex";
+    CONTENT_DISPLAY.content10.style.display = "none";
+    CONTENT_DISPLAY.content11.style.display = "none";
+    CONTENT_DISPLAY.content12.style.display = "none";
+    CONTENT_DISPLAY.content13.style.display = "none";
+    CONTENT_DISPLAY.content14.style.display = "none";
+}
+
+// -------------------------------------------
+
+function verdaechtigeWahl() {
+    CONTENT_DISPLAY.content06.style.display = "none";
+    CONTENT_DISPLAY.content08.style.display = "flex";
 }

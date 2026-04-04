@@ -418,6 +418,14 @@ body {
     font-size: 5rem;
 }
 
+#befragungenButton {
+    cursor: pointer;
+}
+
+#verdaechtigeWahlButton {
+    cursor: pointer;
+}
+
 /* -------------------------------------- */
 
 #content07 {
@@ -445,4 +453,137 @@ body {
     position: fixed;
     top: 10%;
     left: 25%;
+}
+
+/* -------------------------------------- */
+
+#content08 {
+    justify-content: center;
+    align-items: flex-end;
+
+    font-family: font;
+    height: 100vh;
+    width: 100vw;
+
+    background-image: url(img/wahl.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#wahlH1 {
+    color: white;
+    font-size: 4rem;
+    position: fixed;
+    bottom: 0;
+    left: 3rem;
+}
+
+
+#besucher_choose {
+    position: fixed;
+    left: 21rem;
+    bottom: 13rem;
+}
+
+
+
+
+/* -------------------------------------- */
+#content09 {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    background: #262632;
+
+}
+
+#content09 img {
+    width: 100%;
+
+}
+
+#verdachtWahl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url(img/mugshot.jpg);
+    background-repeat: repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* --------------------DIALOGE------------------ */
+
+.akte {
+    position: fixed;
+    bottom: -3rem;
+    left: -2rem;
+    width: 45rem;
+}
+
+.backToChoose {
+    color: white;
+    font-size: 3rem;
+}
+
+#content10 {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    background-image: url(img/dialog01.webp);
+    background-repeat: repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+#content11 {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    background-image: url(img/dialog04.webp);
+    background-repeat: repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+#content12 {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    background-image: url(img/dialog05.webp);
+    background-repeat: repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+#content13 {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    background-image: url(img/dialog02.webp);
+    background-repeat: repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+#content14 {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    background-image: url(img/dialog03.webp );
+    background-repeat: repeat;
+    background-position: right;
+    background-size: contain;
 }
