@@ -519,6 +519,10 @@ body {
     background-size: contain;
 }
 
+#verdachtWahl img {
+    cursor: pointer;
+}
+
 /* --------------------DIALOGE------------------ */
 
 .akte {
@@ -531,6 +535,43 @@ body {
 .backToChoose {
     color: white;
     font-size: 3rem;
+
+    user-select: none;
+    cursor: pointer;
+}
+
+#backToBook {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    color: white;
+    font-size: 3rem;
+
+    user-select: none;
+    cursor: pointer;
+}
+
+.ueberFragen {
+    position: fixed;
+    top: 0;
+    right: -4rem;
+
+    padding: 2%;
+    width: 20rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #FDB31D;
+    font-family: font;
+
+
+    background-image: url(img/button.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 #content10 {
@@ -543,6 +584,8 @@ body {
     background-position: right;
     background-size: contain;
 }
+
+
 
 #content11 {
     height: 100vh;
@@ -586,4 +629,21 @@ body {
     background-repeat: repeat;
     background-position: right;
     background-size: contain;
+}
+
+/* -------------------------------------- */
+
+
+#content15 {
+    width: 100vw;
+    grid-template-columns: auto auto;
+    gap: 0;
+    scrollbar-width: none;
+    overflow-x: hidden;
+    background: #262632;
+    padding: 2%;
+}
+
+#content15 img {
+    width: 90%;
 }

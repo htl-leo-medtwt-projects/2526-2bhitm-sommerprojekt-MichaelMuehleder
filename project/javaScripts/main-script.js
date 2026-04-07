@@ -137,7 +137,7 @@ function inventar() {
 function ausweis() {
 
     CONTENT_DISPLAY.content06.style.display = "none";
-    CONTENT_DISPLAY.content08.style.display = "flex";
+    CONTENT_DISPLAY.content15.style.display = "grid";
 }
 
 function befragungen() {
@@ -188,4 +188,11 @@ function backToChoose() {
 function verdaechtigeWahl() {
     CONTENT_DISPLAY.content06.style.display = "none";
     CONTENT_DISPLAY.content08.style.display = "flex";
+}
+
+function backToBook() {
+    CONTENT_DISPLAY.content06.style.display = "flex";
+    CONTENT_DISPLAY.content08.style.display = "none";
+    CONTENT_DISPLAY.content07.style.display = "none";
+    CONTENT_DISPLAY.content09.style.display = "none";
 }
