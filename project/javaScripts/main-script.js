@@ -111,7 +111,16 @@ function nextSlide() {
     track.style.transform = "translateX(-" + (index * 100) + "%)";
 }
 
+function notizbuchButton() {
+    document.getElementById('buttonBuch').style.animation = "animateButton 0.9s ease";
+
+    setTimeout(() => {
+        notizbuch();
+    }, 700);
+}
+
 function notizbuch() {
+
     CONTENT_DISPLAY.content01.style.display = "none";
     CONTENT_DISPLAY.content02.style.display = "none";
     CONTENT_DISPLAY.content03.style.display = "none";
