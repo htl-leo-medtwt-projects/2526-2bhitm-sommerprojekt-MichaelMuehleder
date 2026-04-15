@@ -573,6 +573,24 @@ body {
     background-size: contain;
 }
 
+.dialogText {
+    position: fixed;
+    top: 15rem;
+    left: 1rem;
+    border: 2px solid #ffffff;
+    width: 35rem;
+    height: 38rem;
+}
+
+ 
+.dialogTextBox h1 {
+    font-family: font;
+
+}
+
+
+
+
 #content10 {
     height: 100vh;
     width: 100vw;

@@ -137,12 +137,16 @@
         <div id="textAufgabenContainer">
             <h1>Aufgaben: </h1>
             <ul>
-                <li><p>Befrage die Verdächtigen und finde Hinweise</p></li>
-                <li><p>sdjfhadshfpuafd</p></li>
+                <li>
+                    <p>Befrage die Verdächtigen und finde Hinweise</p>
+                </li>
+                <li>
+                    <p>sdjfhadshfpuafd</p>
+                </li>
             </ul>
 
-            
-            
+
+
         </div>
 
         <div id="ausweisContainer">
@@ -208,8 +212,37 @@
         <div class="backToChoose" onclick="backToChoose()">←</div>
 
         <div class="ueberFragen">
-            Übrige Fragen: 0
         </div>
+
+        <div class="dialogText">
+
+            <div class="dialogTextBox" onclick="show(this)">
+                <h3>Wo waren Sie zum Zeitpunkt der Tat?</h3>
+                <p style="display:none;">Ich war in der Führung</p>
+            </div>
+
+            <div class="dialogTextBox" onclick="show(this)">
+                <h3>Kennen Sie das Bild?</h3>
+                <p style="display:none;">Nur flüchtig.</p>
+            </div>
+
+            <div class="dialogTextBox" onclick="show(this)">
+                <h3>Haben Sie ein Alibi?</h3>
+                <p style="display:none;">Ehmmm.</p>
+            </div>
+
+            <div class="dialogTextBox" onclick="show(this)">
+                <h3>Warum waren Sie dort?</h3>
+                <p style="display:none;">Ich war in der Führung.</p>
+            </div>
+
+            <div class="dialogTextBox" onclick="show(this)">
+                <h3>Haben Sie etwas gesehen?</h3>
+                <p style="display:none;">Nein.</p>
+            </div>
+
+        </div>
+
     </div>
     <div id="content11">
         <img src="img/akte.png" alt="" class="akte">
@@ -241,6 +274,8 @@
     </div>
 
     <div id="content15">
+        <div id="backToBook" onclick="backToBook()">←</div>
+
 
         <div><img src="img/ausweisMuseumFrau.webp" alt=""></div>
         <div><img src="img/ausweisBesucher.webp" alt=""></div>

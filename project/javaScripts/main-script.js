@@ -204,4 +204,22 @@ function backToBook() {
     CONTENT_DISPLAY.content08.style.display = "none";
     CONTENT_DISPLAY.content07.style.display = "none";
     CONTENT_DISPLAY.content09.style.display = "none";
+    CONTENT_DISPLAY.content15.style.display = "none";
+}
+
+
+
+let rest = 3;
+
+function show(el) {
+    if (rest <= 0) return;
+
+    let p = el.querySelector("p");
+
+    if (p.style.display === "none") {
+        p.style.display = "block";
+        rest--;
+        document.querySelector(".ueberFragen").innerText =
+            "Übrige Fragen: " + rest;
+    }
 }
