@@ -16,6 +16,7 @@ let CONTENT_DISPLAY = {
     content15: document.getElementById('content15')
 
 }
+let rest = 3;
 
 CONTENT_DISPLAY.content01.style.display = "flex";
 CONTENT_DISPLAY.content02.style.display = "none";
@@ -184,6 +185,7 @@ function arbeiterin() {
 }
 
 function backToChoose() {
+    res = 3;
     CONTENT_DISPLAY.content09.style.display = "flex";
     CONTENT_DISPLAY.content10.style.display = "none";
     CONTENT_DISPLAY.content11.style.display = "none";
@@ -208,9 +210,8 @@ function backToBook() {
 }
 
 
-
-let rest = 3;
-
+document.querySelector(".ueberFragen").innerText = "Übrige Fragen: " + rest;
+/*
 function show(el) {
     if (rest <= 0) return;
 
@@ -219,6 +220,68 @@ function show(el) {
     if (p.style.display === "none") {
         p.style.display = "block";
         rest--;
+        document.querySelector(".ueberFragen").innerText =
+            "Übrige Fragen: " + rest;
+    }
+}
+
+*/
+
+
+
+const data = {
+    frage0: "Wo waren Sie?",
+    antwort0: "Zu Hause",
+
+    frage1: "Kennen Sie das Opfer?",
+    antwort1: "Nein",
+
+    frage2: "Haben Sie ein Alibi?",
+    antwort2: "Ja",
+
+    frage3: "Warum dort?",
+    antwort3: "Spazieren",
+
+    frage4: "Etwas gesehen?",
+    antwort4: "Nein",
+
+    frage5: "Warum dort?",
+    antwort5: "Spazieren",
+
+    frage6: "Warum dort?",
+    antwort6: "Spazieren",
+
+    frage7: "Warum dort?",
+    antwort7: "Spazieren",
+
+    frage8: "Warum dort?",
+    antwort8: "Spazieren",
+
+    frage9: "Warum dort?",
+    antwort9: "Spazieren"
+};
+
+
+
+function load() {
+    for (let i = 0; i < 9; i++) {
+        document.getElementById("f" + i).innerText = data["frage" + i];
+        document.getElementById("a" + i).innerText = data["antwort" + i];
+    }
+}
+load();
+
+function show(el, i) {
+  document.querySelector(".ueberFragen").innerText = "Übrige Fragen: " + rest;
+
+    if (rest <= 0) return;
+
+    let p = document.getElementById("a" + i);
+
+    if (p.style.display === "none") {
+        p.style.display = "block";
+        rest--;
+
         document.querySelector(".ueberFragen").innerText =
             "Übrige Fragen: " + rest;
     }
