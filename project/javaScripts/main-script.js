@@ -16,7 +16,7 @@ let CONTENT_DISPLAY = {
     content15: document.getElementById('content15')
 
 }
-let rest = 3;
+let rest = 15;
 
 CONTENT_DISPLAY.content01.style.display = "flex";
 CONTENT_DISPLAY.content02.style.display = "none";
@@ -258,22 +258,88 @@ const data = {
     antwort8: "Spazieren",
 
     frage9: "Warum dort?",
-    antwort9: "Spazieren"
+    antwort9: "Spazieren",
+
+    frage10: "Warum dort?",
+    antwort10: "Spazieren",
+
+    frage11: "Warum dort?",
+    antwort11: "Spazieren",
+
+    frage12: "Warum dort?",
+    antwort12: "Spazieren",
+
+    frage13: "Warum dort?",
+    antwort13: "Spazieren",
+
+    frage14: "Warum dort?",
+    antwort14: "Spazieren",
+
+    frage15: "Warum dort?",
+    antwort15: "Spazieren",
+
+    frage16: "Warum dort?",
+    antwort16: "Spazieren",
+
+    frage17: "Warum dort?",
+    antwort17: "Spazieren",
+
+    frage18: "Warum dort?",
+    antwort18: "Spazieren",
+
+    frage19: "Warum dort?",
+    antwort19: "Spazieren",
+
+    frage20: "Warum dort?",
+    antwort20: "Spazieren",
+
+    frage21: "Wo waren Sie genau zur Tatzeit?",
+    antwort21: "Ich war im Archiv unten… es ist dort immer etwas still und kühl, fast schon beruhigend. Ich musste mich auf die Unterlagen konzentrieren, aber ehrlich gesagt… war ich auch ein wenig nervös wegen der bevorstehenden Führung.",
+
+    frage22: "Warum hat Sie niemand im Archiv gesehen?",
+    antwort22: "Das ist nicht ungewöhnlich… ich arbeite dort oft alleine. Ich schätze diese Ruhe, wissen Sie. Es gibt Tage, da verbringe ich Stunden dort, ohne einer einzigen Person zu begegnen.",
+
+    frage23: "Ihr Zugang wurde beim Ausstellungsraum registriert…",
+    antwort23: "Ja… das hat mich selbst überrascht. Vielleicht bin ich kurz daran vorbeigegangen, ohne es bewusst wahrzunehmen. An solchen Abenden ist man ständig in Bewegung, alles verschwimmt ein wenig.",
+
+    frage24: "Sie kennen die Sicherheitsbereiche sehr gut, stimmt das?",
+    antwort24: "Nun ja… nach all den Jahren wäre es eher seltsam, wenn ich es nicht täte. Ich habe mich immer sehr für die Abläufe interessiert… man entwickelt mit der Zeit ein Gefühl dafür, wie das System funktioniert.",
+
+    frage25: "Warum wirkt es, als würde Sie der Fall persönlich beschäftigen?",
+    antwort25: "Weil es mich auch betrifft. Dieses Museum ist mehr als nur ein Arbeitsplatz für mich… ich habe so viel Zeit hier verbracht. Der Gedanke, dass so etwas hier passieren konnte… lässt mich einfach nicht los."
+
 };
 
 
 
+function updateUI() {
+    let boxes = document.querySelectorAll(".ueberFragen");
+
+    // KI - Hilfe
+    boxes.forEach(box => {
+        box.innerText = "Übrige Fragen: " + rest;
+    });
+}
+
 function load() {
-    for (let i = 0; i < 9; i++) {
-        document.getElementById("f" + i).innerText = data["frage" + i];
-        document.getElementById("a" + i).innerText = data["antwort" + i];
+
+
+    //Mit Hilfe von KI
+    for (let i = 0; i < 26; i++) {
+        let f = document.getElementById("f" + i);
+        let a = document.getElementById("a" + i);
+
+        if (f && a) {
+            f.innerText = data["frage" + i];
+            a.innerText = data["antwort" + i];
+        }
     }
 }
 load();
+updateUI();
+
 
 function show(el, i) {
-  document.querySelector(".ueberFragen").innerText = "Übrige Fragen: " + rest;
-
     if (rest <= 0) return;
 
     let p = document.getElementById("a" + i);
@@ -282,7 +348,7 @@ function show(el, i) {
         p.style.display = "block";
         rest--;
 
-        document.querySelector(".ueberFragen").innerText =
-            "Übrige Fragen: " + rest;
+        updateUI();
+
     }
 }
