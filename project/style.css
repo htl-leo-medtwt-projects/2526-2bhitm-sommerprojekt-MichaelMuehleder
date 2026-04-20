@@ -584,6 +584,8 @@ body {
     font-size: 1rem;
     user-select: none;
 
+    overflow-y: scroll;
+
 }
 
 .dialogText p {
