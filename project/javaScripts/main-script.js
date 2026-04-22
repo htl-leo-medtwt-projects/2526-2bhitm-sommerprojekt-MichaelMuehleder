@@ -273,53 +273,53 @@ const data = {
 
     // -------------------------
 
-    frage10: "Warum dort?",
-    antwort10: "Spazieren",
-    score10: 0,
+    frage10: "Was ist mit den Kameras zur Tatzeit passiert?",
+    antwort10: "Es gab eine kurze Unterbrechung im System. Ich dachte zuerst, es wäre nur ein kleiner Aussetzer, aber ich musste es mir genauer ansehen.",
+    score10: 1,
 
-    frage11: "Warum dort?",
-    antwort11: "Spazieren",
-    score11: 0,
+    frage11: "Warum hat das Licht im Ausstellungsraum kurz geflackert?",
+    antwort11: "Das hängt oft mit den Steuerungssystemen zusammen. Wenn etwas neu gestartet wird, kann es kurz zu solchen Effekten kommen.",
+    score11: 1,
 
-    frage12: "Warum dort?",
-    antwort12: "Spazieren",
-    score12: 0,
+    frage12: "Haben Sie die Kameras selbst neu gestartet?",
+    antwort12: "Ja, ich habe einen Reset durchgeführt, um das Problem zu beheben. Das ist ein Standardvorgang in solchen Situationen.",
+    score12: 1,
 
-    frage13: "Warum dort?",
-    antwort13: "Spazieren",
-    score13: 0,
+    frage13: "Könnte jemand das System manipuliert haben?",
+    antwort13: "Theoretisch ja… aber dafür bräuchte man Zugriff und ein gewisses Verständnis der Technik. Das ist nichts, was ein normaler Besucher einfach so macht.",
+    score13: 1,
 
-    frage14: "Warum dort?",
-    antwort14: "Spazieren",
-    score14: 0,
+    frage14: "Warum waren Sie währenddessen im Ausstellungsraum?",
+    antwort14: "Ich musste prüfen, ob Licht und Kameras wieder korrekt funktionieren. Dafür muss man manchmal direkt vor Ort nachsehen.",
+    score14: 1,
 
     // -------------------------
 
-    frage15: "Warum dort?",
-    antwort15: "Spazieren",
+    frage15: "Wo waren Sie zur Tatzeit?",
+    antwort15: "Ich war im Sicherheitsbüro und habe die Kameras überwacht. Das ist meine Hauptaufgabe während solcher Veranstaltungen.",
     score15: 0,
 
-    frage16: "Warum dort?",
-    antwort16: "Spazieren",
-    score16: 0,
+    frage16: "Wie erklären Sie den Ausfall der Kameras?",
+    antwort16: "Solche Systeme sind nicht unfehlbar. Es gab eine kurze Störung, aber nichts, was sofort auf Sabotage hindeuten würde.",
+    score16: 1,
 
-    frage17: "Warum dort?",
-    antwort17: "Spazieren",
+    frage17: "Haben Sie den Technikmitarbeiter sofort informiert?",
+    antwort17: "Ja, ich habe ihn verständigt, sobald ich die Unregelmäßigkeit bemerkt habe. Dafür ist er schließlich zuständig.",
     score17: 0,
 
-    frage18: "Warum dort?",
-    antwort18: "Spazieren",
-    score18: 0,
+    frage18: "Gab es Sicherheitslücken im Ausstellungsraum?",
+    antwort18: "Offiziell nein. Aber in solchen Momenten reicht schon ein kleines Zeitfenster, damit jemand etwas ausnutzen kann.",
+    score18: 1,
 
-    frage19: "Warum dort?",
-    antwort19: "Spazieren",
-    score19: 0,
+    frage19: "Kennen Sie die Schwachstellen des Systems?",
+    antwort19: "Natürlich. Es ist meine Aufgabe, sie zu kennen, um sie zu sichern… nicht um sie auszunutzen.",
+    score19: 2,
 
+    frage20: "Warum wirken Sie so ruhig bei dem Vorfall?",
+    antwort20: "Panik hilft niemandem. In meinem Beruf muss man auch in kritischen Situationen einen klaren Kopf behalten.",
+    score20: 0,
     // -------------------------
 
-    frage20: "Warum dort?",
-    antwort20: "Spazieren",
-    score20: 0,
 
     frage21: "Wo waren Sie genau zur Tatzeit?",
     antwort21: "Ich war im Archiv unten… es ist dort immer etwas still und kühl, fast schon beruhigend. Ich musste mich auf die Unterlagen konzentrieren, aber ehrlich gesagt… war ich auch ein wenig nervös wegen der bevorstehenden Führung.",

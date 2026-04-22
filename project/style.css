@@ -598,7 +598,29 @@ body {
     cursor: pointer;
 }
 
- 
+
+/* KI - Scrollbar entfernen/bearbeiten */
+
+.dialogText::-webkit-scrollbar {
+    width: 10px;
+}
+
+.dialogText::-webkit-scrollbar-track {
+    background: #00000000; /* Hintergrund */
+    border-radius: 10px;
+}
+
+.dialogText::-webkit-scrollbar-thumb {
+    background: #fdb21d00; /* Scroll-Ding */
+    border-radius: 10px;
+}
+
+.dialogText::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+/* --------------------------------------------*/
+
 .dialogTextBox h1 {
     font-family: font;
     cursor: pointer;
