@@ -479,10 +479,53 @@ body {
 }
 
 
+
 #besucher_choose {
     position: fixed;
-    left: 21rem;
+    left: 21.5rem;
     bottom: 13rem;
+    width: 6rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+#wachmann_choose {
+    position: fixed;
+    left: 35rem;
+    bottom: 13rem;
+    width: 6rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+#techniker_choose {
+    position: fixed;
+    left: 45rem;
+    bottom: 13rem;
+    width: 6rem;
+    cursor: pointer;
+    user-select: none;
+
+}
+
+#arbeiterin_choose {
+    position: fixed;
+    left: 55rem;
+    bottom: 13rem;
+    width: 6rem;
+    cursor: pointer;
+    user-select: none;
+
+}
+
+#museumFrau_choose {
+    position: fixed;
+    right: 21rem;
+    bottom: 13.5rem;
+    width: 6rem;
+    cursor: pointer;
+    user-select: none;
+
 }
 
 
@@ -577,7 +620,7 @@ body {
     position: fixed;
     top: 15rem;
     left: 1rem;
-  /*  border: 2px solid #ffffff; */
+    /*  border: 2px solid #ffffff; */
     width: 35rem;
     height: 38rem;
     font-family: font;
@@ -606,12 +649,14 @@ body {
 }
 
 .dialogText::-webkit-scrollbar-track {
-    background: #00000000; /* Hintergrund */
+    background: #00000000;
+    /* Hintergrund */
     border-radius: 10px;
 }
 
 .dialogText::-webkit-scrollbar-thumb {
-    background: #fdb21d00; /* Scroll-Ding */
+    background: #fdb21d00;
+    /* Scroll-Ding */
     border-radius: 10px;
 }
 

@@ -357,7 +357,6 @@ function updateUI() {
 
 function load() {
 
-
     //Mit Hilfe von KI
     for (let i = 0; i < 26; i++) {
         let f = document.getElementById("f" + i);
