@@ -306,3 +306,52 @@ function checkEnd() {
         }
     }
 }
+
+//---------------------------------------------------------------------------------------------------------------------
+
+function selectSuspect(el) {
+
+    if (el.classList.contains("used")) return;
+
+    let boxen = [
+        document.getElementById("chooseRoundOne01"),
+        document.getElementById("chooseRoundOne02"),
+        document.getElementById("chooseRoundOne03")
+    ];
+
+    for (let i = 0; i < boxen.length; i++) {
+        if (boxen[i].innerHTML === "") {
+
+            let img = document.createElement("img");
+            img.src = el.src;
+            img.style.width = "80px";
+
+            // 👉 NEU: klickbar für zweite Runde
+            img.onclick = function() {
+                selectFinalSuspect(this);
+            };
+
+            boxen[i].appendChild(img);
+
+            el.classList.add("used");
+            el.style.opacity = "0.3";
+
+            break;
+        }
+    }
+}
+
+function selectFinalSuspect(el) {
+
+    let box = document.getElementById("chooseRoundTwo");
+
+    // vorher leeren (nur 1 Täter erlaubt)
+    box.innerHTML = "";
+
+    // Bild kopieren
+    let img = document.createElement("img");
+    img.src = el.src;
+    img.style.width = "80px";
+
+    box.appendChild(img);
+}

@@ -331,11 +331,25 @@ body {
 }
 
 @keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 #content06 {
@@ -382,7 +396,7 @@ body {
     height: 10rem;
     color: red;
     font-family: font;
-    animation: shake 1s ease   ;
+    animation: shake 1s ease;
 }
 
 #ausweisContainer {
@@ -550,6 +564,52 @@ body {
     user-select: none;
 
 }
+
+#chooseRoundOne01 {
+    position: fixed;
+    left: 32.5rem;
+    bottom: 28.5rem;
+    width: 6rem;
+    cursor: pointer;
+    user-select: none;
+    border: 2px solid white;
+    height: 5rem;
+}
+
+
+#chooseRoundOne02 {
+    position: fixed;
+    left: 45rem;
+    bottom: 28.5rem;
+    width: 6rem;
+    cursor: pointer;
+    user-select: none;
+    border: 2px solid white;
+    height: 5rem;
+}
+
+#chooseRoundOne03 {
+    position: fixed;
+    right: 32.5rem;
+    bottom: 28.5rem;
+    width: 6rem;
+    cursor: pointer;
+    user-select: none;
+    border: 2px solid white;
+    height: 5rem;
+}
+
+#chooseRoundTwo {
+    position: fixed;
+    left: 45rem;
+    top: 5.5rem;
+    width: 6rem;
+    cursor: pointer;
+    user-select: none;
+    border: 2px solid white;
+    height: 5rem;
+}
+
 
 
 
