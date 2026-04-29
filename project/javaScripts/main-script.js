@@ -229,20 +229,6 @@ function backToBook() {
 
 
 document.querySelector(".ueberFragen").innerText = "Übrige Fragen: " + rest;
-/*
-function show(el) {
-    if (rest <= 0) return;
-
-    let p = el.querySelector("p");
-
-    if (p.style.display === "none") {
-        p.style.display = "block";
-        rest--;
-        document.querySelector(".ueberFragen").innerText =
-            "Übrige Fragen: " + rest;
-    }
-}
-*/
 
 function updateUI() {
     let boxes = document.querySelectorAll(".ueberFragen");
@@ -309,6 +295,9 @@ function checkEnd() {
 
 //---------------------------------------------------------------------------------------------------------------------
 
+let roundOneDone = false;
+let roundTwoUnlocked = false;
+
 function selectSuspect(el) {
 
     if (el.classList.contains("used")) return;
@@ -324,9 +313,8 @@ function selectSuspect(el) {
 
             let img = document.createElement("img");
             img.src = el.src;
-            img.style.width = "80px";
+            img.style.width = "100%";
 
-            // 👉 NEU: klickbar für zweite Runde
             img.onclick = function() {
                 selectFinalSuspect(this);
             };
@@ -339,19 +327,45 @@ function selectSuspect(el) {
             break;
         }
     }
+
+    // 👉 nur markieren, NICHT freigeben!
+    if (
+        boxen[0].innerHTML !== "" &&
+        boxen[1].innerHTML !== "" &&
+        boxen[2].innerHTML !== ""
+    ) {
+        roundOneDone = true;
+        console.log("Runde 1 fertig");
+    }
+}
+
+function unlockRoundTwo() {
+    if (roundOneDone) {
+        roundTwoUnlocked = true;
+        console.log("Runde 2 freigeschaltet");
+    }
 }
 
 function selectFinalSuspect(el) {
 
-    let box = document.getElementById("chooseRoundTwo");
+    if (!roundOneDone) {
+        alert("Wähle zuerst 3 Verdächtige!");
+        return;
+    }
 
-    // vorher leeren (nur 1 Täter erlaubt)
+    if (!roundTwoUnlocked) {
+        alert("Du musst zuerst den nächsten Schritt machen!");
+        return;
+    }
+
+    let box = document.getElementById("chooseRoundTwo");
     box.innerHTML = "";
 
-    // Bild kopieren
     let img = document.createElement("img");
     img.src = el.src;
-    img.style.width = "80px";
+    img.style.width = "100%";
+    el.style.opacity = "0.3";
+
 
     box.appendChild(img);
 }
