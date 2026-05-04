@@ -140,10 +140,10 @@ body {
 
 #detekivErklaert {
     position: fixed;
-    right: 25rem;
+    right: 20rem;
     top: 50%;
 
-    width: 20rem;
+    width: 30rem;
 }
 
 #bubbleErklaert {
@@ -152,19 +152,20 @@ body {
     top: 15%;
     transform: rotateY(180deg) rotate(25deg);
 
-    width: 45rem;
+    width: 55rem;
 }
 
 #textContainerErklaert {
     position: fixed;
-    right: 46rem;
-    top: 30%;
+    right: 50rem;
+    top: 25%;
 
     width: 25rem;
-    height: 12rem;
-    padding: 2%;
+    height: 15rem;
+    padding: 5%;
 
     overflow: hidden;
+    font-family: font;
 }
 
 .slide {

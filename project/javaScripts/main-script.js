@@ -140,10 +140,29 @@ function back() {
     CONTENT_DISPLAY.content06.style.display = "none";
 }
 
+document.addEventListener("keydown", function (event) {
+    if (event.key === "e" || event.key === "E") {
+        inventar();
+    }
+});
+
 function inventar() {
+
+    CONTENT_DISPLAY.content01.style.display = "none";
+    CONTENT_DISPLAY.content02.style.display = "none";
+    CONTENT_DISPLAY.content03.style.display = "none";
+    CONTENT_DISPLAY.content04.style.display = "none";
     CONTENT_DISPLAY.content05.style.display = "none";
     CONTENT_DISPLAY.content06.style.display = "none";
     CONTENT_DISPLAY.content07.style.display = "flex";
+    CONTENT_DISPLAY.content08.style.display = "none";
+    CONTENT_DISPLAY.content09.style.display = "none";
+    CONTENT_DISPLAY.content10.style.display = "none";
+    CONTENT_DISPLAY.content11.style.display = "none";
+    CONTENT_DISPLAY.content12.style.display = "none";
+    CONTENT_DISPLAY.content13.style.display = "none";
+    CONTENT_DISPLAY.content14.style.display = "none";
+    CONTENT_DISPLAY.content15.style.display = "none";
 
 }
 
@@ -273,20 +292,21 @@ function load() {
 let selectedSuspects = [];
 let roundTwo = false;
 
+
+
 function startRoundTwo() {
     if (roundOneDone) {
         roundTwoUnlocked = true;
         roundTwo = true;
         showOnlySelected();
 
-        rest = 3;
+        rest = 6;
         score = 0;
         updateUI();
 
         loadRoundTwo();
     }
 }
-
 function loadRoundTwo() {
 
     // alles resetten
@@ -298,18 +318,19 @@ function loadRoundTwo() {
             f.innerText = "";
             a.innerHTML = "";
             a.style.display = "none";
-
-            // 👉 ALLES erstmal verstecken
-            f.parentElement.style.display = "none";
         }
     }
 
-    // 👉 nur 3 fragen pro person anzeigen
+    // 👉 WICHTIG: nur 3 pro Person
     let erlaubteFragen = [
-        0,1,2,     // Person 1
-        5,6,7,     // Person 2
-        10,11,12   // Person 3
+        0, 1, 2,        // Besucher
+        3, 4, 5,        // MuseumFrau
+        6, 7, 8,        // Techniker
+        9, 10, 11,      // Wachmann
+        12, 13, 14      // Arbeiterin
     ];
+
+    let erlaubt = 0; // zählt wie viele wirklich angezeigt werden
 
     for (let i = 0; i < erlaubteFragen.length; i++) {
 
@@ -319,20 +340,29 @@ function loadRoundTwo() {
         let a = document.getElementById("a" + index);
 
         if (f && a) {
-            f.innerText = data02["frage" + index];
-            a.innerHTML =
-                data02["antwort" + index] +
-                " --> " +
-                `<span style="color:red;">${data02["score" + index]}</span>`;
 
-            // 👉 sichtbar machen
-            f.parentElement.style.display = "block";
+            // 👉 nur 3 pro Person erlauben
+            if (erlaubt % 3 === 0) {
+                f.parentElement.style.display = "block";
+            }
+
+            if (erlaubt % 3 < 3) {
+
+                f.innerText = data02["frage" + index];
+                a.innerHTML =
+                    data02["antwort" + index] +
+                    " --> " +
+                    `<span style="color:red;">${data02["score" + index]}</span>`;
+
+                a.style.display = "none";
+            }
+
+            erlaubt++;
         }
     }
 
-    console.log("Nur 3 Fragen pro Person geladen");
+    console.log("Round 2 geladen: 3 Fragen pro Person");
 }
-
 load();
 updateUI();
 
@@ -414,7 +444,7 @@ function selectSuspect(el) {
 
     if (selectedSuspects.length === 3) {
         roundOneDone = true;
-   //     unlockRoundTwo();
+        //     unlockRoundTwo();
     }
 }
 
@@ -461,3 +491,6 @@ function selectFinalSuspect(el) {
 
     box.appendChild(img);
 }
+
+//------------------INVENTAR--------------------------------------------------------------------------
+
