@@ -198,6 +198,7 @@ function arbeiterin() {
 
 function backToChoose() {
     res = 3;
+
     CONTENT_DISPLAY.content09.style.display = "flex";
     CONTENT_DISPLAY.content10.style.display = "none";
     CONTENT_DISPLAY.content11.style.display = "none";
@@ -219,7 +220,11 @@ function verdaechtigeWahl() {
     CONTENT_DISPLAY.content08.style.display = "flex";
 }
 
-function backToBook() {
+function backToBookFromChoose() {
+
+    showOnlySelected();
+    startRoundTwo();
+
     CONTENT_DISPLAY.content06.style.display = "flex";
     CONTENT_DISPLAY.content08.style.display = "none";
     CONTENT_DISPLAY.content07.style.display = "none";
@@ -227,6 +232,13 @@ function backToBook() {
     CONTENT_DISPLAY.content15.style.display = "none";
 }
 
+function backToBook() {
+    CONTENT_DISPLAY.content06.style.display = "flex";
+    CONTENT_DISPLAY.content08.style.display = "none";
+    CONTENT_DISPLAY.content07.style.display = "none";
+    CONTENT_DISPLAY.content09.style.display = "none";
+    CONTENT_DISPLAY.content15.style.display = "none";
+}
 
 document.querySelector(".ueberFragen").innerText = "Übrige Fragen: " + rest;
 
@@ -242,8 +254,6 @@ function updateUI() {
 }
 
 function load() {
-
-    //Mit Hilfe von KI
     for (let i = 0; i < 26; i++) {
         let f = document.getElementById("f" + i);
         let a = document.getElementById("a" + i);
@@ -257,9 +267,76 @@ function load() {
         }
     }
 }
+
+// -----------------------------
+
+let selectedSuspects = [];
+let roundTwo = false;
+
+function startRoundTwo() {
+    if (roundOneDone) {
+        roundTwoUnlocked = true;
+        roundTwo = true;
+        showOnlySelected();
+
+        rest = 3;
+        score = 0;
+        updateUI();
+
+        loadRoundTwo();
+    }
+}
+
+function loadRoundTwo() {
+
+    // alles resetten
+    for (let i = 0; i < 26; i++) {
+        let f = document.getElementById("f" + i);
+        let a = document.getElementById("a" + i);
+
+        if (f && a) {
+            f.innerText = "";
+            a.innerHTML = "";
+            a.style.display = "none";
+
+            // 👉 ALLES erstmal verstecken
+            f.parentElement.style.display = "none";
+        }
+    }
+
+    // 👉 nur 3 fragen pro person anzeigen
+    let erlaubteFragen = [
+        0,1,2,     // Person 1
+        5,6,7,     // Person 2
+        10,11,12   // Person 3
+    ];
+
+    for (let i = 0; i < erlaubteFragen.length; i++) {
+
+        let index = erlaubteFragen[i];
+
+        let f = document.getElementById("f" + index);
+        let a = document.getElementById("a" + index);
+
+        if (f && a) {
+            f.innerText = data02["frage" + index];
+            a.innerHTML =
+                data02["antwort" + index] +
+                " --> " +
+                `<span style="color:red;">${data02["score" + index]}</span>`;
+
+            // 👉 sichtbar machen
+            f.parentElement.style.display = "block";
+        }
+    }
+
+    console.log("Nur 3 Fragen pro Person geladen");
+}
+
 load();
 updateUI();
 
+// -----------------------------
 
 function show(el, i) {
     if (rest <= 0) return;
@@ -270,7 +347,12 @@ function show(el, i) {
         p.style.display = "block";
         rest--;
 
-        score += data["score" + i];
+        // FIX: richtige Daten je nach Runde
+        if (!roundTwo) {
+            score += data["score" + i];
+        } else {
+            score += data02["score" + i];
+        }
 
         updateUI();
         checkEnd();
@@ -313,13 +395,15 @@ function selectSuspect(el) {
 
             let img = document.createElement("img");
             img.src = el.src;
-            img.style.width = "100%";
+            img.style.width = "80px";
 
-            img.onclick = function() {
+            img.onclick = function () {
                 selectFinalSuspect(this);
             };
 
             boxen[i].appendChild(img);
+
+            selectedSuspects.push(el.id);
 
             el.classList.add("used");
             el.style.opacity = "0.3";
@@ -328,14 +412,23 @@ function selectSuspect(el) {
         }
     }
 
-    // 👉 nur markieren, NICHT freigeben!
-    if (
-        boxen[0].innerHTML !== "" &&
-        boxen[1].innerHTML !== "" &&
-        boxen[2].innerHTML !== ""
-    ) {
+    if (selectedSuspects.length === 3) {
         roundOneDone = true;
-        console.log("Runde 1 fertig");
+   //     unlockRoundTwo();
+    }
+}
+
+function showOnlySelected() {
+
+    let alle = document.querySelectorAll("#verdachtWahl img");
+
+    for (let i = 0; i < alle.length; i++) {
+
+        let id = alle[i].getAttribute("onclick");
+
+        if (!selectedSuspects.includes(id.replace("()", "_choose"))) {
+            alle[i].style.display = "none";
+        }
     }
 }
 
@@ -365,7 +458,6 @@ function selectFinalSuspect(el) {
     img.src = el.src;
     img.style.width = "100%";
     el.style.opacity = "0.3";
-
 
     box.appendChild(img);
 }
