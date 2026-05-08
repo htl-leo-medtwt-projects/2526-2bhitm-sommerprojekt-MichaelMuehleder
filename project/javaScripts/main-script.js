@@ -43,7 +43,7 @@ function animatePlayButton() {
     document.getElementById('playButton').style.animation = "animateButton 1.3s ease";
 
     setTimeout(() => {
-        playButton();
+        level01();
     }, 1000);
 }
 
@@ -282,7 +282,8 @@ function load() {
             a.innerHTML =
                 data["antwort" + i] +
                 " --> " +
-                `<span style="color:red;">${data["score" + i]}</span>`;
+                `<span style="color:red;">${data["score" + i]}</span>`  + 
+                    `<div id="AddToInventarButton"> Inventar Hinzufügen </div>`;
         }
     }
 }
@@ -352,7 +353,8 @@ function loadRoundTwo() {
                 a.innerHTML =
                     data02["antwort" + index] +
                     " --> " +
-                    `<span style="color:red;">${data02["score" + index]}</span>`;
+                    `<span style="color:red;">${data02["score" + index]}</span>` + 
+                    `<div id="AddToInventarButton"> Inventar Hinzufügen </div>`;
 
                 a.style.display = "none";
             }
@@ -493,4 +495,5 @@ function selectFinalSuspect(el) {
 }
 
 //------------------INVENTAR--------------------------------------------------------------------------
+
 
