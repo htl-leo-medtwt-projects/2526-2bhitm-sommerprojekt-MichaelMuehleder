@@ -358,8 +358,8 @@ function loadRoundTwo() {
                 a.innerHTML =
                     data02["antwort" + index] +
                     " --> " +
-                    `<span style="color:red;">${data02["score" + index]}</span>` + 
-                    `<div id="AddToInventarButton"> Notizblock Hinzufügen </div>`;
+                    `<span style="color:red;">${data02["score" + index]}</span>` +
+                    `<div id="AddToInventarButton" onclick="addToInventar(${i})"> Notizblock Hinzufügen </div>`;
 
                 a.style.display = "none";
             }
@@ -501,13 +501,16 @@ function selectFinalSuspect(el) {
 
 //------------------INVENTAR--------------------------------------------------------------------------
 
+
 function addToInventar(i) {
 
+    if (document.getElementById("item-" + i)) {
+        return;
+    }
     let items = document.getElementById("items");
-
     items.innerHTML += `
-    <li>
-        ${data["summary" + i]}
-    </li>
-`;
+        <li id="item-${i}">
+            ${data["summary" + i]}
+        </li>
+    `;
 }
