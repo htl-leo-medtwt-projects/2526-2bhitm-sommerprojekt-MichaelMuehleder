@@ -400,6 +400,36 @@ body {
     animation: shake 1s ease;
 }
 
+#warningChoose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 2rem;
+    right: 5rem;
+    width: 20rem;
+    height: 10rem;
+    color: red;
+    font-family: font;
+    animation: shake 1s ease;
+}
+
+.befragungWarning {
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 7rem;
+    left: 12rem;
+    width: 20rem;
+    height: 5rem;
+    color: red;
+    font-family: font;
+    animation: shake 1s ease;
+    border: 2px solid yellow;
+}
+
 #ausweisContainer {
 
     display: flex;
@@ -488,11 +518,11 @@ body {
     font-size: 2rem;
     width: 50rem;
     height: 45rem;
-  /*  border: 2px solid yellow; */
+    /*  border: 2px solid yellow; */
     position: fixed;
     top: 10%;
     left: 25%;
-  /*  overflow-y: scroll; */
+    /*  overflow-y: scroll; */
     font-size: 1rem;
 
 }
@@ -856,8 +886,7 @@ body {
     font-size: 0.5rem;
     text-align: center;
     padding: 1%;
-    margin: 1%;
-    
+
 }
 
 .dialogText #AddToInventarButton {

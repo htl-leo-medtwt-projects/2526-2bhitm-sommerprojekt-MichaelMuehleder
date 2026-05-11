@@ -174,14 +174,13 @@ function ausweis() {
 }
 
 function befragungen() {
-    verdaechtigeBefragt = true;
 
     if (!ausweisGesehen) {
         document.getElementById('print-warning').innerHTML = "Du hast dir die Ausweise nicht angesehen!";
         return;
     }
 
-
+    verdaechtigeBefragt = true;
     CONTENT_DISPLAY.content05.style.display = "none";
     CONTENT_DISPLAY.content06.style.display = "none";
     CONTENT_DISPLAY.content09.style.display = "flex";
@@ -240,6 +239,8 @@ function verdaechtigeWahl() {
 }
 
 function backToBookFromChoose() {
+
+    document.getElementById('warningChoose').innerHTML = "";
 
     showOnlySelected();
     startRoundTwo();
@@ -384,7 +385,6 @@ function show(el, i) {
         p.style.display = "block";
         rest--;
 
-        // FIX: richtige Daten je nach Runde
         if (!roundTwo) {
             score += data["score" + i];
         } else {
@@ -399,13 +399,9 @@ function show(el, i) {
 function checkEnd() {
     if (rest === 0) {
 
-        if (!ausweisGesehen) {
-            alert("Du hast dir die Ausweise nicht angesehen!");
-            return;
-        }
-
         if (score >= 3) {
-            alert("Du hast genug Hinweise gesammelt! Du kannst den Täter identifizieren.");
+            alert('haahahahahahahhahahahahahhahhahahahahaha')
+            document.querySelector('.befragungWarning').innerHTML = "Du hast genug Hinweise gesammelt! Du kannst den Täter identifizieren.";
         } else {
             alert("Zu wenig Hinweise… der Täter bleibt unentdeckt.");
         }
@@ -484,7 +480,7 @@ function selectFinalSuspect(el) {
     }
 
     if (!roundTwoUnlocked) {
-        alert("Du musst zuerst den nächsten Schritt machen!");
+        document.getElementById('warningChoose').innerHTML = "Befrage die Verdächtigen nochmal!"
         return;
     }
 
