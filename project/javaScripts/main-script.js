@@ -274,16 +274,21 @@ function updateUI() {
 
 function load() {
     for (let i = 0; i < 26; i++) {
+
         let f = document.getElementById("f" + i);
         let a = document.getElementById("a" + i);
 
         if (f && a) {
+
             f.innerText = data["frage" + i];
+
             a.innerHTML =
                 data["antwort" + i] +
                 " --> " +
-                `<span style="color:red;">${data["score" + i]}</span>`  + 
-                    `<div id="AddToInventarButton"> Inventar Hinzufügen </div>`;
+                `<span style="color:red;">${data["score" + i]}</span>` +
+                `<div id="AddToInventarButton" onclick="addToInventar(${i})">
+                    Notizblock Hinzufügen
+                </div>`;
         }
     }
 }
@@ -354,7 +359,7 @@ function loadRoundTwo() {
                     data02["antwort" + index] +
                     " --> " +
                     `<span style="color:red;">${data02["score" + index]}</span>` + 
-                    `<div id="AddToInventarButton"> Inventar Hinzufügen </div>`;
+                    `<div id="AddToInventarButton"> Notizblock Hinzufügen </div>`;
 
                 a.style.display = "none";
             }
@@ -496,4 +501,13 @@ function selectFinalSuspect(el) {
 
 //------------------INVENTAR--------------------------------------------------------------------------
 
+function addToInventar(i) {
 
+    let items = document.getElementById("items");
+
+    items.innerHTML += `
+    <li>
+        ${data["summary" + i]}
+    </li>
+`;
+}

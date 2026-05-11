@@ -486,10 +486,13 @@ body {
 
 #items {
     font-size: 2rem;
-
+    width: 50rem;
+    height: 45rem;
+    border: 2px solid yellow;
     position: fixed;
     top: 10%;
     left: 25%;
+    overflow-y: scroll;
 }
 
 /* -------------------------------------- */
@@ -829,7 +832,7 @@ body {
 }
 
 #AddToInventarButton {
-    background-color:#FDB31D;
+    background-color: #FDB31D;
     border-radius: 1rem;
     color: white;
     width: 15rem;
