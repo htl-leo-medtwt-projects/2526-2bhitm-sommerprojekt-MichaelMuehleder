@@ -515,3 +515,42 @@ function addToInventar(i) {
         </li>
     `;
 }
+
+
+/* ------------------------------------ */
+
+let startTime = 0;
+let elapsedTime = 0;
+let interval;
+let running = false;
+let locked = false;
+
+function startStopwatch() {
+
+    if (locked) return;
+
+    if (!running) {
+
+        startTime = Date.now() - elapsedTime;
+
+        interval = setInterval(() => {
+            elapsedTime = Date.now() - startTime;
+
+            const totalSeconds = Math.floor(elapsedTime / 1000);
+
+            const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+            const seconds = String(totalSeconds % 60).padStart(2, '0');
+
+            document.getElementById("clock").innerText =
+                `${minutes}:${seconds}`;
+
+        }, 1000);
+
+        running = true;
+
+    } else {
+        clearInterval(interval);
+        running = false;
+        locked = true; // stoppt für immer
+    }
+}

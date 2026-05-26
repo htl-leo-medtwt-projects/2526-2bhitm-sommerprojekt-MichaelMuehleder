@@ -22,7 +22,7 @@
 <body>
 
     <div id="content01">
-        <img src="img/playButton.png" alt="PlayButton" id="playButton" onclick="animatePlayButton()">
+        <img src="img/playButton.png" alt="PlayButton" id="playButton" onclick="animatePlayButton(); startStopwatch();">
         <img src="img/tutorialButton.png" alt="TutorialButton" id="tutorialButton" onclick="animatTutorialButton()">
     </div>
 
@@ -166,6 +166,7 @@
 
     <div id="content06">
         <img src="img/dialog.webp" alt="" id="buch">
+        <div id="clock" onclick="startStopwatch()">00:00</div>
 
         <div id="textAufgabenContainer">
             <h1>Aufgaben: </h1>
