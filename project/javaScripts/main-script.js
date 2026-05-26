@@ -1,3 +1,13 @@
+$('#sliderAusweise').slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear'
+});
+
+
+
 let CONTENT_DISPLAY = {
     content01: document.getElementById('content01'),
     content02: document.getElementById('content02'),
@@ -322,6 +332,7 @@ function loadRoundTwo() {
         let a = document.getElementById("a" + i);
 
         if (f && a) {
+            f.parentElement.style.display = "none";
             f.innerText = "";
             a.innerHTML = "";
             a.style.display = "none";
@@ -334,38 +345,27 @@ function loadRoundTwo() {
         3, 4, 5,        // MuseumFrau
         6, 7, 8,        // Techniker
         9, 10, 11,      // Wachmann
-        12, 13, 14      // Arbeiterin
+        12, 13, 14,     // Arbeiterin
+        15, 16, 17,
+        18, 19, 20,
+        21, 22, 23, 
+        24
     ];
 
-    let erlaubt = 0; // zählt wie viele wirklich angezeigt werden
-
     for (let i = 0; i < erlaubteFragen.length; i++) {
-
         let index = erlaubteFragen[i];
-
         let f = document.getElementById("f" + index);
         let a = document.getElementById("a" + index);
 
         if (f && a) {
-
-            // 👉 nur 3 pro Person erlauben
-            if (erlaubt % 3 === 0) {
-                f.parentElement.style.display = "block";
-            }
-
-            if (erlaubt % 3 < 3) {
-
-                f.innerText = data02["frage" + index];
-                a.innerHTML =
-                    data02["antwort" + index] +
-                    " --> " +
-                    `<span style="color:red;">${data02["score" + index]}</span>` +
-                    `<div id="AddToInventarButton" onclick="addToInventar(${i})"> Notizblock Hinzufügen </div>`;
-
-                a.style.display = "none";
-            }
-
-            erlaubt++;
+            f.parentElement.style.display = "block";
+            f.innerText = data02["frage" + index];
+            a.innerHTML =
+                data02["antwort" + index] +
+                " --> " +
+                `<span style="color:red;">${data02["score" + index]}</span>` +
+                `<div id="AddToInventarButton" onclick="addToInventar(${index})"> Notizblock Hinzufügen </div>`;
+            a.style.display = "none";
         }
     }
 
@@ -396,12 +396,17 @@ function show(el, i) {
     }
 }
 
+document.querySelectorAll('.befragungWarning').forEach(el => {
+    el.style.display = "none";
+});
+
 function checkEnd() {
-    if (rest === 0) {
+    if (rest == 0) {
 
         if (score >= 3) {
-            alert('haahahahahahahhahahahahahhahhahahahahaha')
-            document.querySelector('.befragungWarning').innerHTML = "Du hast genug Hinweise gesammelt! Du kannst den Täter identifizieren.";
+            document.querySelectorAll('.befragungWarning').forEach(el => {
+                el.style.display = "flex";
+            });
         } else {
             alert("Zu wenig Hinweise… der Täter bleibt unentdeckt.");
         }

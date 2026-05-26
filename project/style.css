@@ -80,6 +80,13 @@ body {
     font-family: font;
 }
 
+#infoTextAusweise {
+      font-size: 4rem;
+    padding: 0;
+    color: #FDB31D;
+    font-family: font;
+}
+
 #levelContainer {
     display: flex;
     justify-content: space-around;
@@ -416,7 +423,6 @@ body {
 }
 
 .befragungWarning {
-   display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -427,7 +433,6 @@ body {
     color: red;
     font-family: font;
     animation: shake 1s ease;
-    border: 2px solid yellow;
 }
 
 #ausweisContainer {
@@ -860,18 +865,25 @@ body {
 
 
 #content15 {
-    width: 100vw;
-    grid-template-columns: auto auto;
-    gap: 0;
-    scrollbar-width: none;
+    width: 100%;
+    height: 100%;
     overflow-x: hidden;
     background: #262632;
-    padding: 2%;
 }
 
-#content15 img {
-    width: 90%;
+#sliderAusweise {
+    width: 70vw;
+    margin: auto;
 }
+
+#sliderAusweise img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+/* -------------------------------------- */
+
 
 #AddToInventarButton {
     display: flex;

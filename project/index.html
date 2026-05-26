@@ -5,11 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HiddenMotive</title>
-    <script src="javaScripts/main-script.js" defer></script>
     <link rel="stylesheet" href="style.css">
-
     <script src="javaScripts/JSON-befragung01.js"></script>
     <script src="javaScripts/JSON-befragung02.js"></script>
+    <script src="javaScripts/main-script.js" defer></script>
+
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Slick JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
 <body>
@@ -169,6 +176,9 @@
                 <li>
                     <p>Schau dir die Ausweise an! Fällt dir etwas auf?</p>
                 </li>
+                <li>
+                    <p>Schreib Hinweise in deinen Notizblock und schau sie dir mit "E" an!</p>
+                </li>
 
             </ul>
         </div>
@@ -243,7 +253,7 @@
         <img src="img/akte.png" alt="" class="akte">
         <div class="backToChoose" onclick="backToChoose()">←</div>
         <div class="ueberFragen"></div>
-        <div class="befragungWarning"></div>
+        <div class="befragungWarning">Du hast genug Hinweise gesammelt! Du kannst den Täter identifizieren.</div>
 
         <div class="dialogText">
 
@@ -279,7 +289,7 @@
         <img src="img/akte.png" alt="" class="akte">
         <div class="backToChoose" onclick="backToChoose()">←</div>
         <div class="ueberFragen"></div>
-        <div class="befragungWarning"></div>
+        <div class="befragungWarning">Du hast genug Hinweise gesammelt! Du kannst den Täter identifizieren.</div>
 
         <div class="dialogText">
 
@@ -319,7 +329,7 @@
         <div class="ueberFragen">
             Übrige Fragen: 0
         </div>
-        <div class="befragungWarning"></div>
+        <div class="befragungWarning">Du hast genug Hinweise gesammelt! Du kannst den Täter identifizieren.</div>
 
         <div class="dialogText">
 
@@ -358,7 +368,7 @@
         <div class="ueberFragen">
             Übrige Fragen: 0
         </div>
-        <div class="befragungWarning"></div>
+        <div class="befragungWarning">Du hast genug Hinweise gesammelt! Du kannst den Täter identifizieren.</div>
 
         <div class="dialogText">
 
@@ -401,7 +411,7 @@
         <div class="ueberFragen">
             Übrige Fragen:
         </div>
-        <div class="befragungWarning"></div>
+        <div class="befragungWarning">Du hast genug Hinweise gesammelt! Du kannst den Täter identifizieren.</div>
 
         <div class="dialogText">
 
@@ -436,15 +446,17 @@
     <div id="content15">
         <div id="backToBook" onclick="backToBook()">←</div>
 
+       
 
-        <div><img src="img/ausweisMuseumFrau.webp" alt=""></div>
-        <div><img src="img/ausweisBesucher.webp" alt=""></div>
-        <div><img src="img/ausweisRestauratorin.webp" alt=""></div>
-        <div><img src="img/ausweisWachmann.webp" alt=""></div>
-        <div><img src="img/ausweisTechniker.webp" alt=""></div>
+        <div id="sliderAusweise">
+            <div><img src="img/ausweisMuseumFrau.webp" alt=""></div>
+            <div><img src="img/ausweisBesucher.webp" alt=""></div>
+            <div><img src="img/ausweisRestauratorin.webp" alt=""></div>
+            <div><img src="img/ausweisWachmann.webp" alt=""></div>
+            <div><img src="img/ausweisTechniker.webp" alt=""></div>
+        </div>
 
     </div>
-
 
 </body>
 
