@@ -81,7 +81,7 @@ body {
 }
 
 #infoTextAusweise {
-      font-size: 4rem;
+    font-size: 4rem;
     padding: 0;
     color: #FDB31D;
     font-family: font;
@@ -883,6 +883,19 @@ body {
 }
 
 /* -------------------------------------- */
+
+#content16 {
+    background-image: url(img/arrest.png );
+    background-repeat: repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+
+/* ---------------------------------------------- */
+
+
 
 
 #AddToInventarButton {

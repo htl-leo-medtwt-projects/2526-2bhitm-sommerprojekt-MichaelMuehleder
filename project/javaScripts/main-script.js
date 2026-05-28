@@ -23,7 +23,9 @@ let CONTENT_DISPLAY = {
     content12: document.getElementById('content12'),
     content13: document.getElementById('content13'),
     content14: document.getElementById('content14'),
-    content15: document.getElementById('content15')
+    content15: document.getElementById('content15'),
+    content16: document.getElementById('content16')
+
 
 }
 let rest = 15;
@@ -46,6 +48,8 @@ CONTENT_DISPLAY.content12.style.display = "none";
 CONTENT_DISPLAY.content13.style.display = "none";
 CONTENT_DISPLAY.content14.style.display = "none";
 CONTENT_DISPLAY.content15.style.display = "none";
+CONTENT_DISPLAY.content16.style.display = "none";
+
 
 
 
@@ -348,7 +352,7 @@ function loadRoundTwo() {
         12, 13, 14,     // Arbeiterin
         15, 16, 17,
         18, 19, 20,
-        21, 22, 23, 
+        21, 22, 23,
         24
     ];
 
