@@ -24,7 +24,9 @@ let CONTENT_DISPLAY = {
     content13: document.getElementById('content13'),
     content14: document.getElementById('content14'),
     content15: document.getElementById('content15'),
-    content16: document.getElementById('content16')
+    content16: document.getElementById('content16'),
+    content17: document.getElementById('content17')
+
 
 
 }
@@ -32,6 +34,7 @@ let rest = 15;
 let score = 0;
 let ausweisGesehen = false;
 let verdaechtigeBefragt = false;
+
 
 CONTENT_DISPLAY.content01.style.display = "flex";
 CONTENT_DISPLAY.content02.style.display = "none";
@@ -49,6 +52,8 @@ CONTENT_DISPLAY.content13.style.display = "none";
 CONTENT_DISPLAY.content14.style.display = "none";
 CONTENT_DISPLAY.content15.style.display = "none";
 CONTENT_DISPLAY.content16.style.display = "none";
+CONTENT_DISPLAY.content17.style.display = "none";
+
 
 
 
@@ -422,6 +427,8 @@ function checkEnd() {
 let roundOneDone = false;
 let roundTwoUnlocked = false;
 let finalSuspectChosen = false;
+let finalSuspectChosenFINAL = false;
+let finalChosenId = "";
 
 function selectSuspect(el) {
 
@@ -481,7 +488,12 @@ function unlockRoundTwo() {
         console.log("Runde 2 freigeschaltet");
     }
 }
+
+let richtigerTaeter = false;
+
 function selectFinalSuspect(el) {
+
+    finalSuspectChosenFINAL = true;
 
     if (!roundOneDone) {
         alert("Wähle zuerst 3 Verdächtige!");
@@ -494,7 +506,6 @@ function selectFinalSuspect(el) {
         return;
     }
 
-    // schon gewählt?
     if (finalSuspectChosen) return;
 
     finalSuspectChosen = true;
@@ -505,20 +516,22 @@ function selectFinalSuspect(el) {
     let img = document.createElement("img");
     img.src = el.src;
     img.style.width = "100%";
-
     box.appendChild(img);
 
-    // ALLE verdächtigen abdunkeln
+    // 👉 HIER ENTSCHEIDUNG
+    if (el.src.includes("besucher_choose.png")) {
+        richtigerTaeter = true;
+    } else {
+        richtigerTaeter = false;
+    }
+
+    // optisch alles abdunkeln
     let alle = document.querySelectorAll("#chooseRoundOne img");
 
     for (let i = 0; i < alle.length; i++) {
-
         alle[i].style.opacity = "0.3";
         alle[i].style.pointerEvents = "none";
     }
-
-    // ausgewählten wieder normal machen
-    el.style.opacity = "1";
 }
 
 //------------------INVENTAR--------------------------------------------------------------------------
@@ -579,6 +592,7 @@ function startStopwatch() {
 // ------------------------------------------------------------
 
 function finalContent() {
+
     CONTENT_DISPLAY.content01.style.display = "none";
     CONTENT_DISPLAY.content02.style.display = "none";
     CONTENT_DISPLAY.content03.style.display = "none";
@@ -594,5 +608,14 @@ function finalContent() {
     CONTENT_DISPLAY.content13.style.display = "none";
     CONTENT_DISPLAY.content14.style.display = "none";
     CONTENT_DISPLAY.content15.style.display = "none";
-    CONTENT_DISPLAY.content16.style.display = "flex";
+    CONTENT_DISPLAY.content16.style.display = "none";
+    CONTENT_DISPLAY.content17.style.display = "none";
+
+    // RICHTIG
+   
+    if (richtigerTaeter) {
+        CONTENT_DISPLAY.content16.style.display = "flex";
+    } else {
+        CONTENT_DISPLAY.content17.style.display = "flex";
+    }
 }
