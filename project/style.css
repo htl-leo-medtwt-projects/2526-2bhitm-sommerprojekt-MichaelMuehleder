@@ -579,9 +579,14 @@ body {
     position: fixed;
     left: 35rem;
     bottom: 13rem;
-    width: 6rem;
+    width: 6rem; 
+    border: 2px solid white;
     cursor: pointer;
     user-select: none;
+}
+
+#wachmann_choose img {
+    width: 100%;
 }
 
 #techniker_choose {
@@ -622,6 +627,8 @@ body {
     cursor: pointer;
     user-select: none;
     height: 5rem;
+        border: 2px solid white;
+
 }
 
 
@@ -633,6 +640,8 @@ body {
     cursor: pointer;
     user-select: none;
     height: 5rem;
+        border: 2px solid white;
+
 }
 
 #chooseRoundOne03 {
@@ -643,6 +652,8 @@ body {
     cursor: pointer;
     user-select: none;
     height: 5rem;
+        border: 2px solid white;
+
 }
 
 #chooseRoundTwo {
@@ -653,6 +664,8 @@ body {
     cursor: pointer;
     user-select: none;
     height: 5rem;
+        border: 2px solid white;
+
 }
 
 
@@ -885,10 +898,13 @@ body {
 /* -------------------------------------- */
 
 #content16 {
+    height: 100vh;
+    width: 100vw;
+
     background-image: url(img/arrest.png );
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
 }
 
 

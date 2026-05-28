@@ -421,6 +421,7 @@ function checkEnd() {
 
 let roundOneDone = false;
 let roundTwoUnlocked = false;
+let finalSuspectChosen = false;
 
 function selectSuspect(el) {
 
@@ -480,7 +481,6 @@ function unlockRoundTwo() {
         console.log("Runde 2 freigeschaltet");
     }
 }
-
 function selectFinalSuspect(el) {
 
     if (!roundOneDone) {
@@ -489,9 +489,15 @@ function selectFinalSuspect(el) {
     }
 
     if (!roundTwoUnlocked) {
-        document.getElementById('warningChoose').innerHTML = "Befrage die Verdächtigen nochmal!"
+        document.getElementById('warningChoose').innerHTML =
+            "Befrage die Verdächtigen nochmal!";
         return;
     }
+
+    // schon gewählt?
+    if (finalSuspectChosen) return;
+
+    finalSuspectChosen = true;
 
     let box = document.getElementById("chooseRoundTwo");
     box.innerHTML = "";
@@ -499,9 +505,20 @@ function selectFinalSuspect(el) {
     let img = document.createElement("img");
     img.src = el.src;
     img.style.width = "100%";
-    el.style.opacity = "0.3";
 
     box.appendChild(img);
+
+    // ALLE verdächtigen abdunkeln
+    let alle = document.querySelectorAll("#chooseRoundOne img");
+
+    for (let i = 0; i < alle.length; i++) {
+
+        alle[i].style.opacity = "0.3";
+        alle[i].style.pointerEvents = "none";
+    }
+
+    // ausgewählten wieder normal machen
+    el.style.opacity = "1";
 }
 
 //------------------INVENTAR--------------------------------------------------------------------------
@@ -557,4 +574,25 @@ function startStopwatch() {
         running = false;
         locked = true; // stoppt für immer
     }
+}
+
+// ------------------------------------------------------------
+
+function finalContent() {
+    CONTENT_DISPLAY.content01.style.display = "none";
+    CONTENT_DISPLAY.content02.style.display = "none";
+    CONTENT_DISPLAY.content03.style.display = "none";
+    CONTENT_DISPLAY.content04.style.display = "none";
+    CONTENT_DISPLAY.content05.style.display = "none";
+    CONTENT_DISPLAY.content06.style.display = "none";
+    CONTENT_DISPLAY.content07.style.display = "none";
+    CONTENT_DISPLAY.content08.style.display = "none";
+    CONTENT_DISPLAY.content09.style.display = "none";
+    CONTENT_DISPLAY.content10.style.display = "none";
+    CONTENT_DISPLAY.content11.style.display = "none";
+    CONTENT_DISPLAY.content12.style.display = "none";
+    CONTENT_DISPLAY.content13.style.display = "none";
+    CONTENT_DISPLAY.content14.style.display = "none";
+    CONTENT_DISPLAY.content15.style.display = "none";
+    CONTENT_DISPLAY.content16.style.display = "flex";
 }
