@@ -215,6 +215,7 @@
 
     <div id="content08">
         <div id="warningChoose"></div>
+        <div id="youSure">Bestätigen</div>
         <div id="backToBook" onclick="backToBookFromChoose()">←</div>
 
         <h1 id="wahlH1">Verdächtige Wahl</h1>
@@ -225,11 +226,11 @@
         <img src="img/arbeiterin_choose.png" id="arbeiterin_choose" onclick="selectSuspect(this)">
         <img src="img/museumFrau_choose.png" id="museumFrau_choose" onclick="selectSuspect(this)">
 
-        <div id="chooseRoundOne01" class="box"></div>
-        <div id="chooseRoundOne02" class="box"></div>
-        <div id="chooseRoundOne03" class="box"></div>
+        <div id="chooseRoundOne01" class="box" onclick="check()"></div>
+        <div id="chooseRoundOne02" class="box" onclick="check()"></div>
+        <div id="chooseRoundOne03" class="box" onclick="check()"></div>
 
-        <div id="chooseRoundTwo" onclick="finalContent()"></div>
+        <div id="chooseRoundTwo" onclick="delayFinal()"></div>
     </div>
 
     <div id="content09">

@@ -422,6 +422,20 @@ body {
     animation: shake 1s ease;
 }
 
+#youSure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    left: 52rem;
+    top: 5.5rem;
+    width: 10rem;
+    height: 5rem;
+    color: #FDB31D;
+    font-family: font;
+}
+
 .befragungWarning {
     justify-content: center;
     align-items: center;
@@ -579,7 +593,7 @@ body {
     position: fixed;
     left: 35rem;
     bottom: 13rem;
-    width: 6rem; 
+    width: 6rem;
     border: 2px solid white;
     cursor: pointer;
     user-select: none;
@@ -627,7 +641,7 @@ body {
     cursor: pointer;
     user-select: none;
     height: 5rem;
-        border: 2px solid white;
+    border: 2px solid white;
 
 }
 
@@ -640,7 +654,7 @@ body {
     cursor: pointer;
     user-select: none;
     height: 5rem;
-        border: 2px solid white;
+    border: 2px solid white;
 
 }
 
@@ -652,7 +666,7 @@ body {
     cursor: pointer;
     user-select: none;
     height: 5rem;
-        border: 2px solid white;
+    border: 2px solid white;
 
 }
 
@@ -664,7 +678,7 @@ body {
     cursor: pointer;
     user-select: none;
     height: 5rem;
-        border: 2px solid white;
+    border: 2px solid white;
 
 }
 

@@ -590,6 +590,28 @@ function startStopwatch() {
 }
 
 // ------------------------------------------------------------
+document.getElementById('youSure').style.display = "none";
+
+function check() {
+
+    if (roundTwoUnlocked) {
+
+    document.getElementById('youSure').style.display = "flex";
+
+
+        setTimeout(() => {
+            delayFinal();
+        }, 1000);
+        return;
+    }
+}
+
+function delayFinal() {
+    setTimeout(() => {
+        finalContent();
+    }, 1000);
+
+}
 
 function finalContent() {
 
@@ -612,7 +634,7 @@ function finalContent() {
     CONTENT_DISPLAY.content17.style.display = "none";
 
     // RICHTIG
-   
+
     if (richtigerTaeter) {
         CONTENT_DISPLAY.content16.style.display = "flex";
     } else {
