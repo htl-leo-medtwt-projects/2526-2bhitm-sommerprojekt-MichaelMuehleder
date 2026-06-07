@@ -428,12 +428,17 @@ body {
     align-items: center;
 
     position: fixed;
-    left: 52rem;
+    left: 52.5rem;
     top: 5.5rem;
     width: 10rem;
-    height: 5rem;
+    /*   height: 5rem; */
     color: #FDB31D;
     font-family: font;
+    cursor: pointer;
+
+    border: #FDB31D 2px solid;
+    padding: 1%;
+    border-radius: 1rem;
 }
 
 .befragungWarning {
@@ -594,7 +599,6 @@ body {
     left: 35rem;
     bottom: 13rem;
     width: 6rem;
-    border: 2px solid white;
     cursor: pointer;
     user-select: none;
 }
@@ -641,7 +645,6 @@ body {
     cursor: pointer;
     user-select: none;
     height: 5rem;
-    border: 2px solid white;
 
 }
 
@@ -654,7 +657,6 @@ body {
     cursor: pointer;
     user-select: none;
     height: 5rem;
-    border: 2px solid white;
 
 }
 
@@ -666,7 +668,6 @@ body {
     cursor: pointer;
     user-select: none;
     height: 5rem;
-    border: 2px solid white;
 
 }
 
@@ -678,8 +679,11 @@ body {
     cursor: pointer;
     user-select: none;
     height: 5rem;
-    border: 2px solid white;
 
+}
+
+#chooseRoundTwo img {
+    width: 100%;
 }
 
 
@@ -957,4 +961,41 @@ body {
     color: white;
     font-family: Arial;
     text-align: center;
+}
+
+
+
+/* ---------------------------------- */
+#bubbleWin {
+    position: fixed;
+    top: -1rem;
+    right: 15rem;
+    width: 35rem;
+    transform: rotateY(180deg);
+}
+
+#detektivWin {
+    position: fixed;
+    top: 15rem;
+    right: 1rem;
+    width: 25rem;
+}
+
+#winText {
+    position: fixed;
+    top: 4.5rem;
+    right: 16rem;
+    width: 25rem;
+    /* border: 2px solid green; */
+    /* padding: 1rem; */
+    font-family: font;
+}
+
+#boxWin {
+    position: fixed;
+    bottom: 1rem;
+    left: 25%;
+    width: 50rem;
+    height: 8rem;
+    /* border: 2px solid green; */
 }
