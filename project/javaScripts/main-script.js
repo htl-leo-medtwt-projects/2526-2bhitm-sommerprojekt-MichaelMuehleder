@@ -7,7 +7,6 @@ $('#sliderAusweise').slick({
 });
 
 
-
 let CONTENT_DISPLAY = {
     content01: document.getElementById('content01'),
     content02: document.getElementById('content02'),
@@ -25,11 +24,10 @@ let CONTENT_DISPLAY = {
     content14: document.getElementById('content14'),
     content15: document.getElementById('content15'),
     content16: document.getElementById('content16'),
-    content17: document.getElementById('content17')
-
-
-
+    content17: document.getElementById('content17'),
+    content18: document.getElementById('content18')
 }
+
 let rest = 15;
 let score = 0;
 let ausweisGesehen = false;
@@ -53,6 +51,7 @@ CONTENT_DISPLAY.content14.style.display = "none";
 CONTENT_DISPLAY.content15.style.display = "none";
 CONTENT_DISPLAY.content16.style.display = "none";
 CONTENT_DISPLAY.content17.style.display = "none";
+CONTENT_DISPLAY.content18.style.display = "none";
 
 
 
@@ -555,6 +554,11 @@ function addToInventar(i) {
 
 let startTime = 0;
 let elapsedTime = 0;
+
+let minutes = 0;
+let seconds = 0;
+let milliseconds = 0;
+
 let interval;
 let running = false;
 let locked = false;
@@ -568,38 +572,40 @@ function startStopwatch() {
         startTime = Date.now() - elapsedTime;
 
         interval = setInterval(() => {
+
             elapsedTime = Date.now() - startTime;
 
-            const totalSeconds = Math.floor(elapsedTime / 1000);
-
-            const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
-            const seconds = String(totalSeconds % 60).padStart(2, '0');
+            minutes = Math.floor(elapsedTime / 60000);
+            seconds = Math.floor(elapsedTime / 1000) % 60;
+            milliseconds = elapsedTime % 1000;
 
             document.getElementById("clock").innerText =
-                `${minutes}:${seconds}`;
+                `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
-        }, 1000);
+        }, 10);
 
         running = true;
 
     } else {
         clearInterval(interval);
         running = false;
-        locked = true; // stoppt für immer
+        locked = true;
     }
 }
 
 // ------------------------------------------------------------
 document.getElementById('youSure').style.display = "none";
 
-function onclickYouSure(){
+function onclickYouSure() {
+    startStopwatch();
+    document.getElementById('printTime').innerHTML = "Deine Zeit: <br>" + minutes + ":" + seconds + ":" + milliseconds;
     delayFinal();
 }
 
 function check() {
 
     if (roundTwoUnlocked) {
-    document.getElementById('youSure').style.display = "flex";
+        document.getElementById('youSure').style.display = "flex";
         return;
     }
 }

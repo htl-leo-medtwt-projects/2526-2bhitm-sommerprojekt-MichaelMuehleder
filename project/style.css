@@ -925,6 +925,75 @@ body {
     background-size: cover;
 }
 
+#printTime {
+    font-size: 2rem;
+    width: 15rem;
+    height: 5rem;
+    border: 5px solid greenyellow;
+
+    font-family: font;
+    color: #FDB31D;
+}
+
+
+#bubbleWin {
+    position: fixed;
+    top: -1rem;
+    right: 15rem;
+    width: 35rem;
+    transform: rotateY(180deg);
+}
+
+#detektivWin {
+    position: fixed;
+    top: 15rem;
+    right: 1rem;
+    width: 25rem;
+}
+
+#winText {
+    position: fixed;
+    top: 4.5rem;
+    right: 16rem;
+    width: 25rem;
+    /* border: 2px solid green; */
+    /* padding: 1rem; */
+    font-family: font;
+}
+
+#boxWin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 1rem;
+    left: 25%;
+    width: 35rem;
+    height: 10rem;
+    /* border: 2px solid green; */
+    background-image: url(img/button.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#buttonLocal {
+    width: 15rem;
+    height: 5rem;
+    border: 5px solid greenyellow;
+}
+
+/* ---------------------------------------------- */
+
+#content17 {
+    height: 100vh;
+    width: 100vw;
+
+    background-image: url(img/failed.png );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 
 
 /* ---------------------------------------------- */
@@ -966,36 +1035,3 @@ body {
 
 
 /* ---------------------------------- */
-#bubbleWin {
-    position: fixed;
-    top: -1rem;
-    right: 15rem;
-    width: 35rem;
-    transform: rotateY(180deg);
-}
-
-#detektivWin {
-    position: fixed;
-    top: 15rem;
-    right: 1rem;
-    width: 25rem;
-}
-
-#winText {
-    position: fixed;
-    top: 4.5rem;
-    right: 16rem;
-    width: 25rem;
-    /* border: 2px solid green; */
-    /* padding: 1rem; */
-    font-family: font;
-}
-
-#boxWin {
-    position: fixed;
-    bottom: 1rem;
-    left: 25%;
-    width: 50rem;
-    height: 8rem;
-    /* border: 2px solid green; */
-}
