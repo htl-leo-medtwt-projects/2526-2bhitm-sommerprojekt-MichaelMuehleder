@@ -6,6 +6,16 @@ $('#sliderAusweise').slick({
     cssEase: 'linear'
 });
 
+let buttonClick = new Audio('audio/button02.mp3');
+let writing = new Audio('audio/writing.mp3');
+let win = new Audio('audio/win.mp3');
+let lost = new Audio('audio/lost.mp3');
+
+
+let backgroundMusic = new Audio('audio/piano.mp3');
+
+
+
 
 let CONTENT_DISPLAY = {
     content01: document.getElementById('content01'),
@@ -60,6 +70,11 @@ CONTENT_DISPLAY.content18.style.display = "none";
 function animatePlayButton() {
     document.getElementById('playButton').style.animation = "animateButton 1.3s ease";
 
+    buttonClick.play();
+    backgroundMusic.loop = true;
+    backgroundMusic.play();
+
+
     setTimeout(() => {
         level01();
     }, 1000);
@@ -67,6 +82,12 @@ function animatePlayButton() {
 
 function animatTutorialButton() {
     document.getElementById('tutorialButton').style.animation = "animateButton 1.3s ease";
+
+    buttonClick.play();
+    backgroundMusic.loop = true;
+    backgroundMusic.play();
+
+
 
     setTimeout(() => {
         tutorialButton();
@@ -89,6 +110,8 @@ let slides = document.getElementsByClassName("slide")
 let i = 1;
 
 function zeigen() {
+    buttonClick.play();
+
 
     for (let j = 0; j < slides.length; j++) {
         slides[j].style.display = "none"
@@ -116,6 +139,9 @@ function level01() {
 
 let index = 0;
 function nextSlide() {
+    buttonClick.play();
+
+
     var track = document.querySelector(".storyTrack");
     var images = document.querySelectorAll(".storyTrack img");
 
@@ -134,6 +160,8 @@ function nextSlide() {
 }
 
 function notizbuchButton() {
+    buttonClick.play();
+
     document.getElementById('buttonBuch').style.animation = "animateButton 0.9s ease";
 
     setTimeout(() => {
@@ -153,6 +181,8 @@ function notizbuch() {
 }
 
 function back() {
+    buttonClick.play();
+
     CONTENT_DISPLAY.content04.style.display = "none";
     CONTENT_DISPLAY.content05.style.display = "flex";
     CONTENT_DISPLAY.content06.style.display = "none";
@@ -170,6 +200,7 @@ document.addEventListener("keydown", function (event) {
 });
 
 function inventar() {
+    buttonClick.play();
 
     CONTENT_DISPLAY.content01.style.display = "none";
     CONTENT_DISPLAY.content02.style.display = "none";
@@ -191,6 +222,7 @@ function inventar() {
 
 function ausweis() {
     ausweisGesehen = true;
+    buttonClick.play();
 
     CONTENT_DISPLAY.content06.style.display = "none";
     CONTENT_DISPLAY.content15.style.display = "grid";
@@ -202,6 +234,7 @@ function befragungen() {
         document.getElementById('print-warning').innerHTML = "Du hast dir die Ausweise nicht angesehen!";
         return;
     }
+    buttonClick.play();
 
     verdaechtigeBefragt = true;
     CONTENT_DISPLAY.content05.style.display = "none";
@@ -213,32 +246,38 @@ function befragungen() {
 // DIALOGE
 
 function besucher() {
+    buttonClick.play();
     CONTENT_DISPLAY.content09.style.display = "none";
     CONTENT_DISPLAY.content10.style.display = "flex";
 }
 
 function museumFrau() {
+    buttonClick.play();
     CONTENT_DISPLAY.content09.style.display = "none";
     CONTENT_DISPLAY.content11.style.display = "flex";
 }
 
 function techniker() {
+    buttonClick.play();
     CONTENT_DISPLAY.content09.style.display = "none";
     CONTENT_DISPLAY.content12.style.display = "flex";
 }
 
 function wachmann() {
+    buttonClick.play();
     CONTENT_DISPLAY.content09.style.display = "none";
     CONTENT_DISPLAY.content13.style.display = "flex";
 }
 
 function arbeiterin() {
+    buttonClick.play();
     CONTENT_DISPLAY.content09.style.display = "none";
     CONTENT_DISPLAY.content14.style.display = "flex";
 }
 
 function backToChoose() {
     res = 3;
+    buttonClick.play();
 
     CONTENT_DISPLAY.content09.style.display = "flex";
     CONTENT_DISPLAY.content10.style.display = "none";
@@ -251,6 +290,7 @@ function backToChoose() {
 // -------------------------------------------
 
 function verdaechtigeWahl() {
+    buttonClick.play();
 
     if (!verdaechtigeBefragt) {
         document.getElementById('print-warning').innerHTML = "Du musst die Verdächtigen befragen und Hinweise sammeln!"
@@ -262,6 +302,7 @@ function verdaechtigeWahl() {
 }
 
 function backToBookFromChoose() {
+    buttonClick.play();
 
     document.getElementById('warningChoose').innerHTML = "";
 
@@ -276,6 +317,7 @@ function backToBookFromChoose() {
 }
 
 function backToBook() {
+    buttonClick.play();
     CONTENT_DISPLAY.content06.style.display = "flex";
     CONTENT_DISPLAY.content08.style.display = "none";
     CONTENT_DISPLAY.content07.style.display = "none";
@@ -390,6 +432,8 @@ updateUI();
 // -----------------------------
 
 function show(el, i) {
+    buttonClick.play();
+
     if (rest <= 0) return;
 
     let p = document.getElementById("a" + i);
@@ -435,6 +479,7 @@ let finalSuspectChosenFINAL = false;
 let finalChosenId = "";
 
 function selectSuspect(el) {
+    buttonClick.play();
 
     if (el.classList.contains("used")) return;
 
@@ -542,6 +587,7 @@ function selectFinalSuspect(el) {
 
 
 function addToInventar(i) {
+    writing.play();
 
     if (document.getElementById("item-" + i)) {
         return;
@@ -616,6 +662,8 @@ function check() {
 }
 
 function delayFinal() {
+
+    buttonClick.play();
     setTimeout(() => {
         finalContent();
     }, 1000);
@@ -645,8 +693,10 @@ function finalContent() {
     // RICHTIG
     if (richtigerTaeter) {
         CONTENT_DISPLAY.content16.style.display = "flex";
+        win.play();
     } else {
         CONTENT_DISPLAY.content17.style.display = "flex";
+        lost.play();
     }
 }
 
@@ -655,24 +705,25 @@ function finalContent() {
 
 let finalTime = "";
 
-    document.getElementById('nameInputContainer').style.display = "flex";
-    document.getElementById('thanksForPlaying').style.display = "none";
+document.getElementById('nameInputContainer').style.display = "flex";
+document.getElementById('thanksForPlaying').style.display = "none";
 
 
 function saveTimeLocal() {
 
     finalTime = minutes + ":" + seconds + ":" + milliseconds;
-   
+
     CONTENT_DISPLAY.content16.style.display = "none";
     CONTENT_DISPLAY.content18.style.display = "flex";
 
-    inventoryEnabled = false; 
+    inventoryEnabled = false;
 
 
     loadScores();
 }
 
 function savePlayerTime() {
+    buttonClick.play();
 
     let name = document.getElementById("playerName").value;
 
