@@ -469,8 +469,7 @@
 
         <div id="boxWin">
             <div id="printTime"></div>
-            <div id="buttonLocal">Button</div>
-
+            <div id="buttonLocal" onclick="saveTimeLocal()">Sichern</div>
         </div>
 
 
@@ -488,6 +487,23 @@
     </div>
 
     <div id="content18">
+        <h1 id="thanksForPlaying">Danke fürs spielen!! <br> ~ by Michael Mühleder</h1>
+
+        <div id="infoText">
+            <p>Trage dich in die Liste ein:</p>
+        </div>
+
+        <div id="nameInputContainer">
+            <input type="text" id="playerName" placeholder="Dein Name">
+            <div onclick="savePlayerTime()">Sichern</div>
+        </div>
+
+        <table id="scoreTable">
+            <tr>
+                <th>Name</th>
+                <th>Zeit</th>
+            </tr>
+        </table>
 
     </div>
 

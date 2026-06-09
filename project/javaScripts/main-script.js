@@ -158,7 +158,12 @@ function back() {
     CONTENT_DISPLAY.content06.style.display = "none";
 }
 
+let inventoryEnabled = true;
+
 document.addEventListener("keydown", function (event) {
+
+    if (!inventoryEnabled) return;
+
     if (event.key === "e" || event.key === "E") {
         inventar();
     }
@@ -644,3 +649,83 @@ function finalContent() {
         CONTENT_DISPLAY.content17.style.display = "flex";
     }
 }
+
+
+// ------------------------Mit KI---------------------------------------
+
+let finalTime = "";
+
+    document.getElementById('nameInputContainer').style.display = "flex";
+    document.getElementById('thanksForPlaying').style.display = "none";
+
+
+function saveTimeLocal() {
+
+    finalTime = minutes + ":" + seconds + ":" + milliseconds;
+   
+    CONTENT_DISPLAY.content16.style.display = "none";
+    CONTENT_DISPLAY.content18.style.display = "flex";
+
+    inventoryEnabled = false; 
+
+
+    loadScores();
+}
+
+function savePlayerTime() {
+
+    let name = document.getElementById("playerName").value;
+
+    if (name === "") return;
+
+    let scores = JSON.parse(localStorage.getItem("scores")) || [];
+
+    scores.push({
+        name: name,
+        time: finalTime
+    });
+
+    scores.sort((a, b) => {
+
+        const [ma, sa] = a.time.split(":").map(Number);
+        const [mb, sb] = b.time.split(":").map(Number);
+
+        return (ma * 60 + sa) - (mb * 60 + sb);
+    });
+
+    localStorage.setItem("scores", JSON.stringify(scores));
+
+    document.getElementById("playerName").value = "";
+    document.getElementById('nameInputContainer').style.display = "none";
+    document.getElementById('thanksForPlaying').style.display = "flex";
+
+    loadScores();
+}
+
+function loadScores() {
+
+    let table = document.getElementById("scoreTable");
+
+    table.innerHTML = `
+        <tr>
+            <th>Name</th>
+            <th>Zeit</th>
+        </tr>
+    `;
+
+    let scores = JSON.parse(localStorage.getItem("scores")) || [];
+
+    scores.forEach(score => {
+
+        table.innerHTML += `
+            <tr>
+                <td>${score.name}</td>
+                <td>${score.time}</td>
+            </tr>
+        `;
+
+    });
+
+}
+
+loadScores();
