@@ -55,7 +55,7 @@ const data02 = {
     // TECHNIKER (10–14)
     frage10: "Warum ist der Systemausfall genau zur Tatzeit passiert?",
     antwort10: "Zufall… denke ich. Oder jemand wollte genau diesen Moment nutzen.",
-    score10: 2,
+    score10: 1,
     summary10: "Der Techniker hält Zufall für möglich, sieht aber auch gezielte Manipulation.",
 
     frage11: "Hätten Sie die Möglichkeit gehabt, das selbst zu verursachen?",
@@ -127,6 +127,6 @@ const data02 = {
 
     frage24: "Ist Ihnen etwas Ungewöhnliches aufgefallen?",
     antwort24: "Einige Türen standen offen, obwohl sie geschlossen sein sollten.",
-    score24: 2,
+    score24: 1,
     summary24: "Sie bemerkte offene Türen in gesicherten Bereichen."
 };
