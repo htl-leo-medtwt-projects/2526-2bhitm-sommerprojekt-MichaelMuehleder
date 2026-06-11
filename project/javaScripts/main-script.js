@@ -11,11 +11,7 @@ let writing = new Audio('audio/writing.mp3');
 let win = new Audio('audio/win.mp3');
 let lost = new Audio('audio/lost.mp3');
 
-
 let backgroundMusic = new Audio('audio/piano.mp3');
-
-
-
 
 let CONTENT_DISPLAY = {
     content01: document.getElementById('content01'),
@@ -62,9 +58,6 @@ CONTENT_DISPLAY.content15.style.display = "none";
 CONTENT_DISPLAY.content16.style.display = "none";
 CONTENT_DISPLAY.content17.style.display = "none";
 CONTENT_DISPLAY.content18.style.display = "none";
-
-
-
 
 
 function animatePlayButton() {
