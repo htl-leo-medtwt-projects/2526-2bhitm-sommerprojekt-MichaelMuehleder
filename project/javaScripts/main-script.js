@@ -6,7 +6,7 @@ $('#sliderAusweise').slick({
     cssEase: 'linear'
 });
 
-let buttonClick = new Audio('audio/button02.mp3');
+let buttonClick = new Audio('audio/button03.mp3');
 let writing = new Audio('audio/writing.mp3');
 let win = new Audio('audio/win.mp3');
 let lost = new Audio('audio/lost.mp3');
@@ -297,6 +297,8 @@ function verdaechtigeWahl() {
         return;
     }
 
+    document.getElementById('print-warning').innerHTML = "";
+
     CONTENT_DISPLAY.content06.style.display = "none";
     CONTENT_DISPLAY.content08.style.display = "flex";
 }
@@ -541,6 +543,10 @@ function unlockRoundTwo() {
 let richtigerTaeter = false;
 
 function selectFinalSuspect(el) {
+
+    document.querySelectorAll('.befragungWarning').forEach(el => {
+                el.style.display = "none";
+            });
 
     finalSuspectChosenFINAL = true;
 
